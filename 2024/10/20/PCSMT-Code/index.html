@@ -168,21 +168,433 @@
             2024/10/20
         </span>
         
+        <span class="category">
+            <a href="/categories/Source-Code/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                Source Code
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/PCSMT/" style="color: #00a596">
+                    PCSMT
+                </a>
+            </span>
+            
+        </span>
         
     </div>
     
     <div class="content" v-pre>
-        <h5 id="这里是PCSMT的功能代码库"><a href="#这里是PCSMT的功能代码库" class="headerlink" title="这里是PCSMT的功能代码库"></a>这里是PCSMT的功能代码库</h5><h2 id="Server-List"><a href="#Server-List" class="headerlink" title="Server List"></a>Server List</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">void ServerList(std::string args) &#123;</span><br><span class="line">    std::ofstream LogFile(LogOutputPath, std::ios::out | std::ios::app);</span><br><span class="line">    auto Output = [&amp;](const std::string&amp; text) &#123;</span><br><span class="line">        std::cout &lt;&lt; <span class="string">text &lt;&lt; std::endl;</span></span><br><span class="line"><span class="string">        LogFile &lt;&lt; text</span> &lt;&lt; <span class="string">std::endl;</span></span><br><span class="line"><span class="string">        &#125;;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    //获取列表服务器名数量</span></span><br><span class="line"><span class="string">    ServerNameNumber = InitializationServerName();</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Output(&quot;服务器列表：&quot;);</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    //输出服务器列表</span></span><br><span class="line"><span class="string">    //std</span>::cout &lt;&lt; <span class="string">ServerNameNumber &lt;&lt; std::endl;</span></span><br><span class="line"><span class="string">    for (int OutputServerName = 0; OutputServerName &lt; ServerNameNumber</span>; OutputServerName++)</span><br><span class="line">    &#123;</span><br><span class="line">        Output(std::to_string(OutputServerName) + ADot + ServerName[OutputServerName].c_str());</span><br><span class="line">    &#125;</span><br><span class="line">    LogFile.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Start-Server"><a href="#Start-Server" class="headerlink" title="Start Server"></a>Start Server</h2> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"> void ToStartServer(std::string args) &#123;</span><br><span class="line">    std::ofstream LogFile(LogOutputPath, std::ios::out | std::ios::app);</span><br><span class="line">    auto Output = [&amp;](const std::string&amp; text) &#123;</span><br><span class="line">        std::cout &lt;&lt; <span class="string">text &lt;&lt; std::endl;</span></span><br><span class="line"><span class="string">        LogFile &lt;&lt; text</span> &lt;&lt; <span class="string">std::endl;</span></span><br><span class="line"><span class="string">        &#125;;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    //将输入的转换为整形</span></span><br><span class="line"><span class="string">    int ServerNamePositionTotals = std</span>::atoi(args.c_str());</span><br><span class="line">    Output(<span class="string">&quot;启动服务器：&quot;</span> + ServerName[ServerNamePositionTotals]);</span><br><span class="line"></span><br><span class="line">    //将std::string ServerPosition转换到const char* ServerNamePosition</span><br><span class="line">    std::string cdServerPosition = CD + ServerFolder[ServerNamePositionTotals];</span><br><span class="line">    std::string startServer = StartString + ServerFolder[ServerNamePositionTotals] + StartBatch;</span><br><span class="line"></span><br><span class="line">    //执行命令</span><br><span class="line">    system(cdServerPosition.c_str());</span><br><span class="line">    int excuteResult = system(startServer.c_str());</span><br><span class="line">    <span class="keyword">while</span> (excuteResult != 0)</span><br><span class="line">    &#123;</span><br><span class="line">        Output(<span class="string">&quot;执行启动脚本失败！&quot;</span>);</span><br><span class="line">        <span class="built_in">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    Output(<span class="string">&quot;执行启动脚本成功！&quot;</span>);</span><br><span class="line">    Output(<span class="string">&quot;当前启动服务器：&quot;</span> + ServerName[ServerNamePositionTotals]);</span><br><span class="line">    LogFile.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Add-Server"><a href="#Add-Server" class="headerlink" title="Add Server"></a>Add Server</h2><h5 id="Add-Server-1"><a href="#Add-Server-1" class="headerlink" title="Add Server"></a>Add Server</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br></pre></td><td class="code"><pre><span class="line">void AddServer(std::string args) &#123;</span><br><span class="line">   std::ofstream LogFile(LogOutputPath, std::ios::out | std::ios::app);</span><br><span class="line">   auto Output = [&amp;](const std::string&amp; text) &#123;</span><br><span class="line">       std::cout &lt;&lt; <span class="string">text &lt;&lt; std::endl;</span></span><br><span class="line"><span class="string">       LogFile &lt;&lt; text</span> &lt;&lt; <span class="string">std::endl;</span></span><br><span class="line"><span class="string">       &#125;;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">   const char* ServerPath = args.c_str();</span></span><br><span class="line"><span class="string">   //std</span>::wstring StartBarchWstring(StartBatch.begin(), StartBatch.end());</span><br><span class="line">   //std::wstring midServerPath(args.begin(), args.end());</span><br><span class="line">   //std::wstring ServerPositionFolder = midServerPath + StartBarchWstring;</span><br><span class="line"></span><br><span class="line">   const int ServerAbsolutePathLong = 512;</span><br><span class="line">   char ServerAbsolutePath[ServerAbsolutePathLong]&#123;&#125;;</span><br><span class="line"></span><br><span class="line">   //获取当前程序的绝对路径</span><br><span class="line">   GetCurrentDirectory(ServerAbsolutePathLong, ServerAbsolutePath);</span><br><span class="line"></span><br><span class="line">   //LPCWSTR ServerAbsolutePositionFolder = ServerPositionFolder.c_str();</span><br><span class="line"></span><br><span class="line">   //GetFullPathName(ServerAbsolutePositionFolder, MAX_PATH, ServerAbsolutePath, NULL);</span><br><span class="line"></span><br><span class="line">   std::string getServerName;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">for</span> (char get : args)</span><br><span class="line">   &#123;</span><br><span class="line">       <span class="keyword">if</span> (get != <span class="string">&#x27;.&#x27;</span> &amp;&amp; get != <span class="string">&#x27;/&#x27;</span>) &#123;</span><br><span class="line">           getServerName += get;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   Output(<span class="string">&quot;服务器名：&quot;</span> + getServerName);</span><br><span class="line"></span><br><span class="line">   CheckPCSMTFolder();</span><br><span class="line">   //如果有./PCSMT/ServerPosition.txt文件就打开，没有则创建</span><br><span class="line">   //存储ServerPosition</span><br><span class="line">   std::fstream ServerAddress(ADot + PCSMTPositionFolder + ServerPositionTxt, std::ios::out | std::ios::app);</span><br><span class="line"></span><br><span class="line">   //检查文件是否打开</span><br><span class="line">   <span class="keyword">if</span> (!ServerAddress.is_open())</span><br><span class="line">   &#123;</span><br><span class="line">       Output(<span class="string">&quot;服务器路径存储错误！打开文件时发生错误&quot;</span>);</span><br><span class="line">       ServerAddress.close();</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">else</span> &#123;</span><br><span class="line">       //std::cout &lt;&lt; <span class="string">args &lt;&lt; StartBatch &lt;&lt; std::endl;</span></span><br><span class="line"><span class="string">       //std::cout &lt;&lt; ServerPath &lt;&lt; StartBatch &lt;&lt; std::endl;</span></span><br><span class="line"><span class="string">       Output(&quot;服务器路径：&quot;);</span></span><br><span class="line"><span class="string">       Output(ServerAbsolutePath + RightSlash + getServerName + StartBatch);</span></span><br><span class="line"><span class="string">       ServerAddress &lt;&lt; ServerAbsolutePath &lt;&lt; RightSlash + getServerName &lt;&lt; StartBatch &lt;&lt; std::endl;</span></span><br><span class="line"><span class="string">       ServerAddress.close();</span></span><br><span class="line"><span class="string">       //检查Start.bat文件的存在并写入Start.bat中</span></span><br><span class="line"><span class="string">       CheckStartBatch(ServerAbsolutePath + RightSlash + getServerName);</span></span><br><span class="line"><span class="string">       //输出信息</span></span><br><span class="line"><span class="string">       Output(&quot;服务器路径存储完成！&quot;);</span></span><br><span class="line"><span class="string">   &#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">   //存储ServerName</span></span><br><span class="line"><span class="string">   ServerAddress.open(ADot + PCSMTPositionFolder + ServerNameTxt, std::ios::out | std::ios::app);</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">   if (!ServerAddress.is_open())</span></span><br><span class="line"><span class="string">   &#123;</span></span><br><span class="line"><span class="string">       Output(&quot;服务器名存储错误！打开文件时发生错误&quot;);</span></span><br><span class="line"><span class="string">       ServerAddress.close();</span></span><br><span class="line"><span class="string">   &#125;</span></span><br><span class="line"><span class="string">   else &#123;</span></span><br><span class="line"><span class="string">       </span></span><br><span class="line"><span class="string">       ServerAddress &lt;&lt; getServerName &lt;&lt; std::endl;</span></span><br><span class="line"><span class="string">       ServerAddress.close();</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       Output(&quot;服务器名存储完成！&quot;);</span></span><br><span class="line"><span class="string">   &#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">   ServerAddress.open(ADot + PCSMTPositionFolder + ServerFolderTxt, std::ios::out | std::ios::app);</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">   if (!ServerAddress.is_open())</span></span><br><span class="line"><span class="string">   &#123;</span></span><br><span class="line"><span class="string">       Output(&quot;服务器所在文件夹存储错误！打开文件时发生错误&quot;);</span></span><br><span class="line"><span class="string">       ServerAddress.close();</span></span><br><span class="line"><span class="string">   &#125;</span></span><br><span class="line"><span class="string">   else &#123;</span></span><br><span class="line"><span class="string">       Output(&quot;服务器所在文件夹：&quot;);</span></span><br><span class="line"><span class="string">       Output(ServerAbsolutePath + RightSlash + getServerName);</span></span><br><span class="line"><span class="string">       ServerAddress &lt;&lt; ServerAbsolutePath &lt;&lt; RightSlash + getServerName &lt;&lt; std::endl;</span></span><br><span class="line"><span class="string">       ServerAddress.close();</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       Output(&quot;服务器所在文件夹存储完成！&quot;);</span></span><br><span class="line"><span class="string">   &#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">   InitializationServerPosition();</span></span><br><span class="line"><span class="string">   InitializationServerName();</span></span><br><span class="line"><span class="string">   InitializationServerFolder();</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">   LogFile.close();</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
+        <h5 id="这里是PCSMT的功能代码库"><a href="#这里是PCSMT的功能代码库" class="headerlink" title="这里是PCSMT的功能代码库"></a>这里是PCSMT的功能代码库</h5><span id="more"></span>
+<h2 id="Server-List"><a href="#Server-List" class="headerlink" title="Server List"></a>Server List</h2><pre><code class="cpp">void ServerList(std::string args) &#123;
+    std::ofstream LogFile(LogOutputPath, std::ios::out | std::ios::app);
+    auto Output = [&amp;](const std::string&amp; text) &#123;
+        std::cout &lt;&lt; text &lt;&lt; std::endl;
+        LogFile &lt;&lt; text &lt;&lt; std::endl;
+        &#125;;
 
-<h5 id="Initialization"><a href="#Initialization" class="headerlink" title="Initialization"></a>Initialization</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br></pre></td><td class="code"><pre><span class="line">int <span class="function"><span class="title">InitializationServerPosition</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">	std::ofstream LogFile(LogOutputPath, std::ios::out | std::ios::app);</span><br><span class="line">	auto Output = [&amp;](const std::string&amp; text) &#123;</span><br><span class="line">		std::cout &lt;&lt; <span class="string">text &lt;&lt; std::endl;</span></span><br><span class="line"><span class="string">		LogFile &lt;&lt; text</span> &lt;&lt; <span class="string">std::endl;</span></span><br><span class="line"><span class="string">		&#125;;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">	const int MaxServerTotals = 512;</span></span><br><span class="line"><span class="string">	int ReadServerPostionContent = 0;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">	std</span>::string ServerPositionReaded[MaxServerTotals];</span><br><span class="line">	std::ifstream ReadServerPosition;</span><br><span class="line">	//打开文件</span><br><span class="line">	ReadServerPosition.open(ADot + PCSMTPositionFolder + ServerPositionTxt, std::ios::<span class="keyword">in</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (ReadServerPosition.is_open() == <span class="literal">false</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		Output(<span class="string">&quot;文件打开失败！&quot;</span>);</span><br><span class="line">		<span class="built_in">return</span> 0;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	Output(<span class="string">&quot;读取文件&quot;</span> + ServerPositionTxt + <span class="string">&quot;中！&quot;</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span> (std::getline(ReadServerPosition, ServerPositionReaded[ReadServerPostionContent]))</span><br><span class="line">	&#123;</span><br><span class="line">		Output(<span class="string">&quot;读取服务器地址:&quot;</span> + ServerPositionReaded[ReadServerPostionContent]);</span><br><span class="line">		ServerPosition[ReadServerPostionContent] = ServerPositionReaded[ReadServerPostionContent];</span><br><span class="line">		//return ServerPositionReaded[ReadServerPostionContent];</span><br><span class="line">		ReadServerPostionContent++;</span><br><span class="line">	&#125;</span><br><span class="line">	LogFile.close();</span><br><span class="line">	<span class="built_in">return</span> ReadServerPostionContent;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int <span class="function"><span class="title">InitializationServerName</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">	std::ofstream LogFile(LogOutputPath, std::ios::out | std::ios::app);</span><br><span class="line">	auto Output = [&amp;](const std::string&amp; text) &#123;</span><br><span class="line">		std::cout &lt;&lt; <span class="string">text &lt;&lt; std::endl;</span></span><br><span class="line"><span class="string">		LogFile &lt;&lt; text</span> &lt;&lt; <span class="string">std::endl;</span></span><br><span class="line"><span class="string">		&#125;;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">	const int MaxServerTotals = 512;</span></span><br><span class="line"><span class="string">	int ReadServerNameContent = 0;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">	std</span>::string ServerNameReaded[MaxServerTotals];</span><br><span class="line">	std::ifstream ReadServerName;</span><br><span class="line">	//打开文件</span><br><span class="line">	ReadServerName.open(ADot + PCSMTPositionFolder + ServerNameTxt, std::ios::<span class="keyword">in</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (ReadServerName.is_open() == <span class="literal">false</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		Output(<span class="string">&quot;文件打开失败！&quot;</span>);</span><br><span class="line">		<span class="built_in">return</span> 0;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	Output(<span class="string">&quot;读取文件&quot;</span> + ServerNameTxt + <span class="string">&quot;中！&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span> (std::getline(ReadServerName, ServerNameReaded[ReadServerNameContent]))</span><br><span class="line">	&#123;</span><br><span class="line">		Output(<span class="string">&quot;读取服务器名：&quot;</span> + ServerNameReaded[ReadServerNameContent]);</span><br><span class="line">		ServerName[ReadServerNameContent] = ServerNameReaded[ReadServerNameContent];</span><br><span class="line">		//std::cout &lt;&lt; <span class="string">ReadServerNameContent &lt;&lt; std::endl;</span></span><br><span class="line"><span class="string">		ReadServerNameContent</span>++;</span><br><span class="line">	&#125;</span><br><span class="line">	LogFile.close();</span><br><span class="line">	<span class="built_in">return</span> ReadServerNameContent;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int <span class="function"><span class="title">InitializationServerFolder</span></span>() </span><br><span class="line">&#123;</span><br><span class="line">	std::ofstream LogFile(LogOutputPath, std::ios::out | std::ios::app);</span><br><span class="line">	auto Output = [&amp;](const std::string&amp; text) &#123;</span><br><span class="line">		std::cout &lt;&lt; <span class="string">text &lt;&lt; std::endl;</span></span><br><span class="line"><span class="string">		LogFile &lt;&lt; text</span> &lt;&lt; <span class="string">std::endl;</span></span><br><span class="line"><span class="string">		&#125;;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">	const int MaxServerTotals = 512;</span></span><br><span class="line"><span class="string">	int ReadServerFolderContent = 0;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">	std</span>::string ServerFolderReaded[MaxServerTotals];</span><br><span class="line">	std::ifstream ReadServerFolder;</span><br><span class="line">	//打开文件</span><br><span class="line">	ReadServerFolder.open(ADot + PCSMTPositionFolder + ServerFolderTxt, std::ios::<span class="keyword">in</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (ReadServerFolder.is_open() == <span class="literal">false</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		Output(<span class="string">&quot;文件打开失败！&quot;</span>);</span><br><span class="line">		<span class="built_in">return</span> 0;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	Output(<span class="string">&quot;读取文件&quot;</span> + ServerFolderTxt + <span class="string">&quot;中！&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span> (std::getline(ReadServerFolder, ServerFolderReaded[ReadServerFolderContent]))</span><br><span class="line">	&#123;</span><br><span class="line">		Output(<span class="string">&quot;读取服务器所在文件夹：&quot;</span> + ServerFolderReaded[ReadServerFolderContent]);</span><br><span class="line">		ServerFolder[ReadServerFolderContent] = ServerFolderReaded[ReadServerFolderContent];</span><br><span class="line">		//std::cout &lt;&lt; <span class="string">ReadServerFolderContent &lt;&lt; std::endl;</span></span><br><span class="line"><span class="string">		ReadServerFolderContent</span>++;</span><br><span class="line">	&#125;</span><br><span class="line">	LogFile.close();</span><br><span class="line">	<span class="built_in">return</span> ReadServerFolderContent;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    //获取列表服务器名数量
+    ServerNameNumber = InitializationServerName();
 
-<h5 id="Check-Start-Batch"><a href="#Check-Start-Batch" class="headerlink" title="Check Start Batch"></a>Check Start Batch</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">void CheckStartBatch(std::string StartBatchpath)</span><br><span class="line">&#123;</span><br><span class="line">	std::ofstream LogFile(LogOutputPath, std::ios::out | std::ios::app);</span><br><span class="line">	auto Output = [&amp;](const std::string&amp; text) &#123;</span><br><span class="line">		std::cout &lt;&lt; <span class="string">text &lt;&lt; std::endl;</span></span><br><span class="line"><span class="string">		LogFile &lt;&lt; text</span> &lt;&lt; <span class="string">std::endl;</span></span><br><span class="line"><span class="string">		&#125;;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">	ServerCoreFileName = FindFilesWithExtension(StartBatchpath, &quot;.jar&quot;);</span></span><br><span class="line"><span class="string">	std</span>::string StartBatchPath = StartBatchpath + <span class="string">&quot;/Start.bat&quot;</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (ServerCoreFileName == <span class="string">&quot;&quot;</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		// 尝试打开文件</span><br><span class="line">		std::fstream StartBatch;</span><br><span class="line">		StartBatch.open(StartBatchPath);</span><br><span class="line"></span><br><span class="line">		// 检查文件是否成功打开</span><br><span class="line">		<span class="keyword">if</span> (!StartBatch.is_open())</span><br><span class="line">		&#123;</span><br><span class="line">			Output(<span class="string">&quot;未发现Start.bat文件！&quot;</span>);</span><br><span class="line">			Output(<span class="string">&quot;创建Start.bat文件！&quot;</span>);</span><br><span class="line">			StartBatch.open(StartBatchPath, std::fstream::out | std::fstream::trunc);</span><br><span class="line"></span><br><span class="line">			//检查文件是否创建</span><br><span class="line">			<span class="keyword">if</span> (StartBatch.is_open()) &#123;</span><br><span class="line">				Output(<span class="string">&quot;创建并打开了Start.bat文件。&quot;</span>);</span><br><span class="line"></span><br><span class="line">				//创建并配置Start.bat文件</span><br><span class="line">				StartBatch &lt;&lt; <span class="string">&quot;cd &quot;</span> + StartBatchpath &lt;&lt; <span class="string">std::endl;</span></span><br><span class="line"><span class="string">				StartBatch &lt;&lt; &quot;java -jar -Xms&quot; + XmsRam + &quot; -Xmx&quot; + XmxRam + &quot; -jar &quot; + ServerCoreFileName &lt;&lt; std</span>::endl;</span><br><span class="line">				Output(<span class="string">&quot;配置成功！&quot;</span>);</span><br><span class="line">				StartBatch.close(); // 操作完成后关闭文件</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> &#123;</span><br><span class="line">				Output(<span class="string">&quot;尝试创建文件失败！&quot;</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			//绑定并配置Start.bat文件</span><br><span class="line">			Output(<span class="string">&quot;已绑定Start.bat文件！&quot;</span>);</span><br><span class="line">			StartBatch &lt;&lt; <span class="string">&quot;cd &quot;</span> + StartBatchpath &lt;&lt; <span class="string">std::endl;</span></span><br><span class="line"><span class="string">			StartBatch &lt;&lt; &quot;java -jar -Xms&quot; + XmsRam + &quot; -Xmx&quot; + XmxRam + &quot; -jar &quot; + ServerCoreFileName &lt;&lt; std</span>::endl;</span><br><span class="line">			Output(<span class="string">&quot;配置成功！&quot;</span>);</span><br><span class="line">			StartBatch.close(); // 操作完成后关闭文件</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	LogFile.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="Check-PCSMT-Folder"><a href="#Check-PCSMT-Folder" class="headerlink" title="Check PCSMT Folder"></a>Check PCSMT Folder</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">void <span class="function"><span class="title">CheckPCSMTFolder</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">	std::ofstream LogFile(LogOutputPath, std::ios::out | std::ios::app);</span><br><span class="line">	auto Output = [&amp;](const std::string&amp; text) &#123;</span><br><span class="line">		std::cout &lt;&lt; <span class="string">text &lt;&lt; std::endl;</span></span><br><span class="line"><span class="string">		LogFile &lt;&lt; text</span> &lt;&lt; <span class="string">std::endl;</span></span><br><span class="line"><span class="string">		&#125;;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">	std</span>::string PCSMTFolderPosition = ADot + PCSMTPositionFolder;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (_access(PCSMTFolderPosition.c_str(), 0) == -1)</span><br><span class="line">	&#123;</span><br><span class="line">		Output(<span class="string">&quot;文件夹不存在，创建中...&quot;</span>);</span><br><span class="line">		int serverposition = _mkdir(PCSMTFolderPosition.c_str());</span><br><span class="line">		Output(<span class="string">&quot;创建完成！&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		Output(<span class="string">&quot;检查完毕！文件夹存在！&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	LogFile.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Help"><a href="#Help" class="headerlink" title="Help"></a>Help</h2> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"> void Help(std::string args) &#123;</span><br><span class="line">    std::ofstream LogFile(LogOutputPath, std::ios::out | std::ios::app);</span><br><span class="line">    auto Output = [&amp;](const std::string&amp; text) &#123;</span><br><span class="line">        std::cout &lt;&lt; <span class="string">text &lt;&lt; std::endl;</span></span><br><span class="line"><span class="string">        LogFile &lt;&lt; text</span> &lt;&lt; <span class="string">std::endl;</span></span><br><span class="line"><span class="string">        &#125;;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    int HelpLoop = HelpQuantity;</span></span><br><span class="line"><span class="string">    int HelpPosition = 0;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    //将Help内定义的文本检查输出</span></span><br><span class="line"><span class="string">    for (size_t HelpPosition = 0; HelpPosition &lt; HelpCommandName[HelpPosition].size(); ++HelpPosition) &#123;</span></span><br><span class="line"><span class="string">        if (HelpCommandName[HelpPosition] == &quot; &quot;) &#123;</span></span><br><span class="line"><span class="string">            continue; // 如果当前元素是空格字符串，则跳过</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">        //输出信息</span></span><br><span class="line"><span class="string">        Output(HelpCommandName[HelpPosition] + TabKey + HelpCommandRole[HelpPosition] + TabKey + HelpCommandUsage[HelpPosition]);</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">    LogFile.close();</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
-<h2 id="Start"><a href="#Start" class="headerlink" title="Start"></a>Start</h2> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"> void Start(std::string args) &#123;</span><br><span class="line">    std::ofstream LogFile(LogOutputPath, std::ios::out | std::ios::app);</span><br><span class="line">    auto Output = [&amp;](const std::string&amp; text) &#123;</span><br><span class="line">        std::cout &lt;&lt; <span class="string">text &lt;&lt; std::endl;</span></span><br><span class="line"><span class="string">        LogFile &lt;&lt; text</span> &lt;&lt; <span class="string">std::endl;</span></span><br><span class="line"><span class="string">        &#125;;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    //std</span>::cout &lt;&lt; <span class="string">&quot;Start &quot;</span> &lt;&lt; <span class="string">args &lt;&lt; &quot; units&quot; &lt;&lt; std::endl;</span></span><br><span class="line"><span class="string">    //将输入转换为const char*类型的常量</span></span><br><span class="line"><span class="string">    std::string ServerPathString = StartString + args</span>;</span><br><span class="line">    const char *ServerPathChar = ServerPathString.c_str();</span><br><span class="line">    //使用system函数进行打开文件</span><br><span class="line">    system(ServerPathChar);</span><br><span class="line">    //输出信息</span><br><span class="line">    Output(<span class="string">&quot;打开文件:&quot;</span>);</span><br><span class="line">    LogFile.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Register-Server-Commands"><a href="#Register-Server-Commands" class="headerlink" title="Register Server Commands"></a>Register Server Commands</h2> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">// 创建一个映射，用于存储指令和对应的函数</span><br><span class="line">std::map&lt;std::string, StartServer&gt; StartServerCommand;</span><br><span class="line"></span><br><span class="line">//注册指令</span><br><span class="line">void registerServerCommand(const std::string&amp; CommandName, StartServer servercmd) &#123;</span><br><span class="line">    StartServerCommand[CommandName] = servercmd;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 执行指令</span><br><span class="line">void excuteServerCommand(const std::string&amp; scLine) &#123;</span><br><span class="line">    std::ofstream LogFile(LogOutputPath, std::ios::out | std::ios::app);</span><br><span class="line">    auto Output = [&amp;](const std::string&amp; text) &#123;</span><br><span class="line">        std::cout &lt;&lt; <span class="string">text &lt;&lt; std::endl;</span></span><br><span class="line"><span class="string">        LogFile &lt;&lt; text</span> &lt;&lt; <span class="string">std::endl;</span></span><br><span class="line"><span class="string">        &#125;;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    std</span>::istringstream server(scLine);</span><br><span class="line">    std::string servercommand;</span><br><span class="line">    server &gt;&gt; servercommand;</span><br><span class="line">    <span class="keyword">if</span> (StartServerCommand.find(servercommand) != StartServerCommand.end()) &#123;</span><br><span class="line">        std::string serverargs;</span><br><span class="line">        server &gt;&gt; serverargs;</span><br><span class="line">        StartServerCommand[servercommand](serverargs);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        //输出错误信息</span><br><span class="line">        Output(<span class="string">&quot;Unkown command: &quot;</span> + servercommand);</span><br><span class="line">        Output(<span class="string">&quot;使用“help”以查询指令&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    LogFile.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    Output(&quot;服务器列表：&quot;);
+    
+    //输出服务器列表
+    //std::cout &lt;&lt; ServerNameNumber &lt;&lt; std::endl;
+    for (int OutputServerName = 0; OutputServerName &lt; ServerNameNumber; OutputServerName++)
+    &#123;
+        Output(std::to_string(OutputServerName) + ADot + ServerName[OutputServerName].c_str());
+    &#125;
+    LogFile.close();
+&#125;
+</code></pre>
+<h2 id="Start-Server"><a href="#Start-Server" class="headerlink" title="Start Server"></a>Start Server</h2><pre><code class="cpp">void ToStartServer(std::string args) &#123;
+   std::ofstream LogFile(LogOutputPath, std::ios::out | std::ios::app);
+   auto Output = [&amp;](const std::string&amp; text) &#123;
+       std::cout &lt;&lt; text &lt;&lt; std::endl;
+       LogFile &lt;&lt; text &lt;&lt; std::endl;
+       &#125;;
+
+   //将输入的转换为整形
+   int ServerNamePositionTotals = std::atoi(args.c_str());
+   Output(&quot;启动服务器：&quot; + ServerName[ServerNamePositionTotals]);
+
+   //将std::string ServerPosition转换到const char* ServerNamePosition
+   std::string cdServerPosition = CD + ServerFolder[ServerNamePositionTotals];
+   std::string startServer = StartString + ServerFolder[ServerNamePositionTotals] + StartBatch;
+
+   //执行命令
+   system(cdServerPosition.c_str());
+   int excuteResult = system(startServer.c_str());
+   while (excuteResult != 0)
+   &#123;
+       Output(&quot;执行启动脚本失败！&quot;);
+       return;
+   &#125;
+   Output(&quot;执行启动脚本成功！&quot;);
+   Output(&quot;当前启动服务器：&quot; + ServerName[ServerNamePositionTotals]);
+   LogFile.close();
+&#125;
+</code></pre>
+<h2 id="Add-Server"><a href="#Add-Server" class="headerlink" title="Add Server"></a>Add Server</h2><h5 id="Add-Server-1"><a href="#Add-Server-1" class="headerlink" title="Add Server"></a>Add Server</h5><pre><code class="cpp"> void AddServer(std::string args) &#123;
+    std::ofstream LogFile(LogOutputPath, std::ios::out | std::ios::app);
+    auto Output = [&amp;](const std::string&amp; text) &#123;
+        std::cout &lt;&lt; text &lt;&lt; std::endl;
+        LogFile &lt;&lt; text &lt;&lt; std::endl;
+        &#125;;
+
+    const char* ServerPath = args.c_str();
+    //std::wstring StartBarchWstring(StartBatch.begin(), StartBatch.end());
+    //std::wstring midServerPath(args.begin(), args.end());
+    //std::wstring ServerPositionFolder = midServerPath + StartBarchWstring;
+
+    const int ServerAbsolutePathLong = 512;
+    char ServerAbsolutePath[ServerAbsolutePathLong]&#123;&#125;;
+
+    //获取当前程序的绝对路径
+    GetCurrentDirectory(ServerAbsolutePathLong, ServerAbsolutePath);
+
+    //LPCWSTR ServerAbsolutePositionFolder = ServerPositionFolder.c_str();
+
+    //GetFullPathName(ServerAbsolutePositionFolder, MAX_PATH, ServerAbsolutePath, NULL);
+
+    std::string getServerName;
+
+    for (char get : args)
+    &#123;
+        if (get != &#39;.&#39; &amp;&amp; get != &#39;/&#39;) &#123;
+            getServerName += get;
+        &#125;
+    &#125;
+
+    Output(&quot;服务器名：&quot; + getServerName);
+
+    CheckPCSMTFolder();
+    //如果有./PCSMT/ServerPosition.txt文件就打开，没有则创建
+    //存储ServerPosition
+    std::fstream ServerAddress(ADot + PCSMTPositionFolder + ServerPositionTxt, std::ios::out | std::ios::app);
+
+    //检查文件是否打开
+    if (!ServerAddress.is_open())
+    &#123;
+        Output(&quot;服务器路径存储错误！打开文件时发生错误&quot;);
+        ServerAddress.close();
+    &#125;
+    else &#123;
+        //std::cout &lt;&lt; args &lt;&lt; StartBatch &lt;&lt; std::endl;
+        //std::cout &lt;&lt; ServerPath &lt;&lt; StartBatch &lt;&lt; std::endl;
+        Output(&quot;服务器路径：&quot;);
+        Output(ServerAbsolutePath + RightSlash + getServerName + StartBatch);
+        ServerAddress &lt;&lt; ServerAbsolutePath &lt;&lt; RightSlash + getServerName &lt;&lt; StartBatch &lt;&lt; std::endl;
+        ServerAddress.close();
+        //检查Start.bat文件的存在并写入Start.bat中
+        CheckStartBatch(ServerAbsolutePath + RightSlash + getServerName);
+        //输出信息
+        Output(&quot;服务器路径存储完成！&quot;);
+    &#125;
+
+    //存储ServerName
+    ServerAddress.open(ADot + PCSMTPositionFolder + ServerNameTxt, std::ios::out | std::ios::app);
+
+    if (!ServerAddress.is_open())
+    &#123;
+        Output(&quot;服务器名存储错误！打开文件时发生错误&quot;);
+        ServerAddress.close();
+    &#125;
+    else &#123;
+        
+        ServerAddress &lt;&lt; getServerName &lt;&lt; std::endl;
+        ServerAddress.close();
+
+        Output(&quot;服务器名存储完成！&quot;);
+    &#125;
+
+    ServerAddress.open(ADot + PCSMTPositionFolder + ServerFolderTxt, std::ios::out | std::ios::app);
+
+    if (!ServerAddress.is_open())
+    &#123;
+        Output(&quot;服务器所在文件夹存储错误！打开文件时发生错误&quot;);
+        ServerAddress.close();
+    &#125;
+    else &#123;
+        Output(&quot;服务器所在文件夹：&quot;);
+        Output(ServerAbsolutePath + RightSlash + getServerName);
+        ServerAddress &lt;&lt; ServerAbsolutePath &lt;&lt; RightSlash + getServerName &lt;&lt; std::endl;
+        ServerAddress.close();
+
+        Output(&quot;服务器所在文件夹存储完成！&quot;);
+    &#125;
+
+    InitializationServerPosition();
+    InitializationServerName();
+    InitializationServerFolder();
+
+    LogFile.close();
+ &#125;
+</code></pre>
+<h5 id="Initialization"><a href="#Initialization" class="headerlink" title="Initialization"></a>Initialization</h5><pre><code class="cpp">int InitializationServerPosition()
+&#123;
+    std::ofstream LogFile(LogOutputPath, std::ios::out | std::ios::app);
+    auto Output = [&amp;](const std::string&amp; text) &#123;
+        std::cout &lt;&lt; text &lt;&lt; std::endl;
+        LogFile &lt;&lt; text &lt;&lt; std::endl;
+        &#125;;
+
+    const int MaxServerTotals = 512;
+    int ReadServerPostionContent = 0;
+
+    std::string ServerPositionReaded[MaxServerTotals];
+    std::ifstream ReadServerPosition;
+    //打开文件
+    ReadServerPosition.open(ADot + PCSMTPositionFolder + ServerPositionTxt, std::ios::in);
+
+    if (ReadServerPosition.is_open() == false)
+    &#123;
+        Output(&quot;文件打开失败！&quot;);
+        return 0;
+    &#125;
+
+    Output(&quot;读取文件&quot; + ServerPositionTxt + &quot;中！&quot;);
+
+
+    while (std::getline(ReadServerPosition, ServerPositionReaded[ReadServerPostionContent]))
+    &#123;
+        Output(&quot;读取服务器地址:&quot; + ServerPositionReaded[ReadServerPostionContent]);
+        ServerPosition[ReadServerPostionContent] = ServerPositionReaded[ReadServerPostionContent];
+        //return ServerPositionReaded[ReadServerPostionContent];
+        ReadServerPostionContent++;
+    &#125;
+    LogFile.close();
+    return ReadServerPostionContent;
+&#125;
+
+int InitializationServerName()
+&#123;
+    std::ofstream LogFile(LogOutputPath, std::ios::out | std::ios::app);
+    auto Output = [&amp;](const std::string&amp; text) &#123;
+        std::cout &lt;&lt; text &lt;&lt; std::endl;
+        LogFile &lt;&lt; text &lt;&lt; std::endl;
+        &#125;;
+
+    const int MaxServerTotals = 512;
+    int ReadServerNameContent = 0;
+
+    std::string ServerNameReaded[MaxServerTotals];
+    std::ifstream ReadServerName;
+    //打开文件
+    ReadServerName.open(ADot + PCSMTPositionFolder + ServerNameTxt, std::ios::in);
+
+    if (ReadServerName.is_open() == false)
+    &#123;
+        Output(&quot;文件打开失败！&quot;);
+        return 0;
+    &#125;
+
+    Output(&quot;读取文件&quot; + ServerNameTxt + &quot;中！&quot;);
+
+    while (std::getline(ReadServerName, ServerNameReaded[ReadServerNameContent]))
+    &#123;
+        Output(&quot;读取服务器名：&quot; + ServerNameReaded[ReadServerNameContent]);
+        ServerName[ReadServerNameContent] = ServerNameReaded[ReadServerNameContent];
+        //std::cout &lt;&lt; ReadServerNameContent &lt;&lt; std::endl;
+        ReadServerNameContent++;
+    &#125;
+    LogFile.close();
+    return ReadServerNameContent;
+&#125;
+
+int InitializationServerFolder() 
+&#123;
+    std::ofstream LogFile(LogOutputPath, std::ios::out | std::ios::app);
+    auto Output = [&amp;](const std::string&amp; text) &#123;
+        std::cout &lt;&lt; text &lt;&lt; std::endl;
+        LogFile &lt;&lt; text &lt;&lt; std::endl;
+        &#125;;
+
+    const int MaxServerTotals = 512;
+    int ReadServerFolderContent = 0;
+
+    std::string ServerFolderReaded[MaxServerTotals];
+    std::ifstream ReadServerFolder;
+    //打开文件
+    ReadServerFolder.open(ADot + PCSMTPositionFolder + ServerFolderTxt, std::ios::in);
+
+    if (ReadServerFolder.is_open() == false)
+    &#123;
+        Output(&quot;文件打开失败！&quot;);
+        return 0;
+    &#125;
+
+    Output(&quot;读取文件&quot; + ServerFolderTxt + &quot;中！&quot;);
+
+    while (std::getline(ReadServerFolder, ServerFolderReaded[ReadServerFolderContent]))
+    &#123;
+        Output(&quot;读取服务器所在文件夹：&quot; + ServerFolderReaded[ReadServerFolderContent]);
+        ServerFolder[ReadServerFolderContent] = ServerFolderReaded[ReadServerFolderContent];
+        //std::cout &lt;&lt; ReadServerFolderContent &lt;&lt; std::endl;
+        ReadServerFolderContent++;
+    &#125;
+    LogFile.close();
+    return ReadServerFolderContent;
+&#125;
+</code></pre>
+<h5 id="Check-Start-Batch"><a href="#Check-Start-Batch" class="headerlink" title="Check Start Batch"></a>Check Start Batch</h5><pre><code class="cpp">void CheckStartBatch(std::string StartBatchpath)
+&#123;
+    std::ofstream LogFile(LogOutputPath, std::ios::out | std::ios::app);
+    auto Output = [&amp;](const std::string&amp; text) &#123;
+        std::cout &lt;&lt; text &lt;&lt; std::endl;
+        LogFile &lt;&lt; text &lt;&lt; std::endl;
+        &#125;;
+
+    ServerCoreFileName = FindFilesWithExtension(StartBatchpath, &quot;.jar&quot;);
+    std::string StartBatchPath = StartBatchpath + &quot;/Start.bat&quot;;
+
+    if (ServerCoreFileName == &quot;&quot;)
+    &#123;
+        return;
+    &#125;
+    else &#123;
+        // 尝试打开文件
+        std::fstream StartBatch;
+        StartBatch.open(StartBatchPath);
+
+        // 检查文件是否成功打开
+        if (!StartBatch.is_open())
+        &#123;
+            Output(&quot;未发现Start.bat文件！&quot;);
+            Output(&quot;创建Start.bat文件！&quot;);
+            StartBatch.open(StartBatchPath, std::fstream::out | std::fstream::trunc);
+
+            //检查文件是否创建
+            if (StartBatch.is_open()) &#123;
+                Output(&quot;创建并打开了Start.bat文件。&quot;);
+
+                //创建并配置Start.bat文件
+                StartBatch &lt;&lt; &quot;cd &quot; + StartBatchpath &lt;&lt; std::endl;
+                StartBatch &lt;&lt; &quot;java -jar -Xms&quot; + XmsRam + &quot; -Xmx&quot; + XmxRam + &quot; -jar &quot; + ServerCoreFileName &lt;&lt; std::endl;
+                Output(&quot;配置成功！&quot;);
+                StartBatch.close(); // 操作完成后关闭文件
+            &#125;
+            else &#123;
+                Output(&quot;尝试创建文件失败！&quot;);
+            &#125;
+        &#125;
+        else &#123;
+            //绑定并配置Start.bat文件
+            Output(&quot;已绑定Start.bat文件！&quot;);
+            StartBatch &lt;&lt; &quot;cd &quot; + StartBatchpath &lt;&lt; std::endl;
+            StartBatch &lt;&lt; &quot;java -jar -Xms&quot; + XmsRam + &quot; -Xmx&quot; + XmxRam + &quot; -jar &quot; + ServerCoreFileName &lt;&lt; std::endl;
+            Output(&quot;配置成功！&quot;);
+            StartBatch.close(); // 操作完成后关闭文件
+        &#125;
+    &#125;
+    LogFile.close();
+&#125;
+</code></pre>
+<h5 id="Check-PCSMT-Folder"><a href="#Check-PCSMT-Folder" class="headerlink" title="Check PCSMT Folder"></a>Check PCSMT Folder</h5><pre><code class="cpp">void CheckPCSMTFolder()
+&#123;
+    std::ofstream LogFile(LogOutputPath, std::ios::out | std::ios::app);
+    auto Output = [&amp;](const std::string&amp; text) &#123;
+        std::cout &lt;&lt; text &lt;&lt; std::endl;
+        LogFile &lt;&lt; text &lt;&lt; std::endl;
+        &#125;;
+
+    std::string PCSMTFolderPosition = ADot + PCSMTPositionFolder;
+
+    if (_access(PCSMTFolderPosition.c_str(), 0) == -1)
+    &#123;
+        Output(&quot;文件夹不存在，创建中...&quot;);
+        int serverposition = _mkdir(PCSMTFolderPosition.c_str());
+        Output(&quot;创建完成！&quot;);
+    &#125;
+    else &#123;
+        Output(&quot;检查完毕！文件夹存在！&quot;);
+    &#125;
+    LogFile.close();
+&#125;
+</code></pre>
+<h2 id="Help"><a href="#Help" class="headerlink" title="Help"></a>Help</h2><pre><code class="cpp">void Help(std::string args) &#123;
+   std::ofstream LogFile(LogOutputPath, std::ios::out | std::ios::app);
+   auto Output = [&amp;](const std::string&amp; text) &#123;
+       std::cout &lt;&lt; text &lt;&lt; std::endl;
+       LogFile &lt;&lt; text &lt;&lt; std::endl;
+       &#125;;
+
+   int HelpLoop = HelpQuantity;
+   int HelpPosition = 0;
+
+   //将Help内定义的文本检查输出
+   for (size_t HelpPosition = 0; HelpPosition &lt; HelpCommandName[HelpPosition].size(); ++HelpPosition) &#123;
+       if (HelpCommandName[HelpPosition] == &quot; &quot;) &#123;
+           continue; // 如果当前元素是空格字符串，则跳过
+       &#125;
+       //输出信息
+       Output(HelpCommandName[HelpPosition] + TabKey + HelpCommandRole[HelpPosition] + TabKey + HelpCommandUsage[HelpPosition]);
+   &#125;
+   LogFile.close();
+&#125;
+</code></pre>
+<h2 id="Start"><a href="#Start" class="headerlink" title="Start"></a>Start</h2><pre><code class="cpp">void Start(std::string args) &#123;
+   std::ofstream LogFile(LogOutputPath, std::ios::out | std::ios::app);
+   auto Output = [&amp;](const std::string&amp; text) &#123;
+       std::cout &lt;&lt; text &lt;&lt; std::endl;
+       LogFile &lt;&lt; text &lt;&lt; std::endl;
+       &#125;;
+
+   //std::cout &lt;&lt; &quot;Start &quot; &lt;&lt; args &lt;&lt; &quot; units&quot; &lt;&lt; std::endl;
+   //将输入转换为const char*类型的常量
+   std::string ServerPathString = StartString + args;
+   const char *ServerPathChar = ServerPathString.c_str();
+   //使用system函数进行打开文件
+   system(ServerPathChar);
+   //输出信息
+   Output(&quot;打开文件:&quot;);
+   LogFile.close();
+&#125;
+</code></pre>
+<h2 id="Register-Server-Commands"><a href="#Register-Server-Commands" class="headerlink" title="Register Server Commands"></a>Register Server Commands</h2><pre><code class="cpp">// 创建一个映射，用于存储指令和对应的函数
+std::map&lt;std::string, StartServer&gt; StartServerCommand;
+
+//注册指令
+void registerServerCommand(const std::string&amp; CommandName, StartServer servercmd) &#123;
+   StartServerCommand[CommandName] = servercmd;
+&#125;
+
+// 执行指令
+void excuteServerCommand(const std::string&amp; scLine) &#123;
+   std::ofstream LogFile(LogOutputPath, std::ios::out | std::ios::app);
+   auto Output = [&amp;](const std::string&amp; text) &#123;
+       std::cout &lt;&lt; text &lt;&lt; std::endl;
+       LogFile &lt;&lt; text &lt;&lt; std::endl;
+       &#125;;
+
+   std::istringstream server(scLine);
+   std::string servercommand;
+   server &gt;&gt; servercommand;
+   if (StartServerCommand.find(servercommand) != StartServerCommand.end()) &#123;
+       std::string serverargs;
+       server &gt;&gt; serverargs;
+       StartServerCommand[servercommand](serverargs);
+   &#125;
+   else &#123;
+       //输出错误信息
+       Output(&quot;Unkown command: &quot; + servercommand);
+       Output(&quot;使用“help”以查询指令&quot;);
+   &#125;
+   LogFile.close();
+&#125;
+</code></pre>
+
     </div>
     
     
