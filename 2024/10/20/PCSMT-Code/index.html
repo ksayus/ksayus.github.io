@@ -3,7 +3,7 @@
 <html lang="cn">
 <head>
     <meta charset="utf-8" />
-    <title>Ksayus の 猫窝</title>
+    <title>PCSMT-Code | Ksayus の 猫窝</title>
     <meta name="author" content="Ksayus" />
     <meta name="description" content="喵~" />
     <meta name="keywords" content="" />
@@ -42,7 +42,11 @@
 
 
 
-<script src="/js/lib/home.js"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/twikoo/1.6.31/twikoo.all.min.js"></script>
+
+
 
 <link rel="stylesheet" href="/css/main.css" />
 
@@ -152,40 +156,11 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div id="home-head">
-    <div
-        id="home-background"
-        ref="homeBackground"
-        data-images="/images/background.jpg"
-    ></div>
-    <div id="home-info" @click="homeClick">
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="info">
-            <div class="wrap">
-                <h1>Ksayus の 猫窝</h1>
-                <h3></h3>
-                <h5>喵~</h5>
-            </div>
-        </span>
+            <div class="article">
+    <div>
+        <h1>PCSMT-Code</h1>
     </div>
-</div>
-<div
-    id="home-posts-wrap"
-    ref="homePostsWrap"
-    true
->
-    <div id="home-posts">
-        
-
-<div class="post">
-    <a href="/2024/10/20/PCSMT-Code/">
-        <h2 class="post-title">PCSMT-Code</h2>
-    </a>
-    <div class="category-and-date">
-        
+    <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
@@ -195,10 +170,9 @@
         
         
     </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h5 id="这里是PCSMT的功能代码库"><a href="#这里是PCSMT的功能代码库" class="headerlink" title="这里是PCSMT的功能代码库"></a>这里是PCSMT的功能代码库</h5><h2 id="Server-List"><a href="#Server-List" class="headerlink" title="Server List"></a>Server List</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">void ServerList(std::string args) &#123;</span><br><span class="line">    std::ofstream LogFile(LogOutputPath, std::ios::out | std::ios::app);</span><br><span class="line">    auto Output = [&amp;](const std::string&amp; text) &#123;</span><br><span class="line">        std::cout &lt;&lt; <span class="string">text &lt;&lt; std::endl;</span></span><br><span class="line"><span class="string">        LogFile &lt;&lt; text</span> &lt;&lt; <span class="string">std::endl;</span></span><br><span class="line"><span class="string">        &#125;;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    //获取列表服务器名数量</span></span><br><span class="line"><span class="string">    ServerNameNumber = InitializationServerName();</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Output(&quot;服务器列表：&quot;);</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    //输出服务器列表</span></span><br><span class="line"><span class="string">    //std</span>::cout &lt;&lt; <span class="string">ServerNameNumber &lt;&lt; std::endl;</span></span><br><span class="line"><span class="string">    for (int OutputServerName = 0; OutputServerName &lt; ServerNameNumber</span>; OutputServerName++)</span><br><span class="line">    &#123;</span><br><span class="line">        Output(std::to_string(OutputServerName) + ADot + ServerName[OutputServerName].c_str());</span><br><span class="line">    &#125;</span><br><span class="line">    LogFile.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    
+    <div class="content" v-pre>
+        <h5 id="这里是PCSMT的功能代码库"><a href="#这里是PCSMT的功能代码库" class="headerlink" title="这里是PCSMT的功能代码库"></a>这里是PCSMT的功能代码库</h5><h2 id="Server-List"><a href="#Server-List" class="headerlink" title="Server List"></a>Server List</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">void ServerList(std::string args) &#123;</span><br><span class="line">    std::ofstream LogFile(LogOutputPath, std::ios::out | std::ios::app);</span><br><span class="line">    auto Output = [&amp;](const std::string&amp; text) &#123;</span><br><span class="line">        std::cout &lt;&lt; <span class="string">text &lt;&lt; std::endl;</span></span><br><span class="line"><span class="string">        LogFile &lt;&lt; text</span> &lt;&lt; <span class="string">std::endl;</span></span><br><span class="line"><span class="string">        &#125;;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    //获取列表服务器名数量</span></span><br><span class="line"><span class="string">    ServerNameNumber = InitializationServerName();</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Output(&quot;服务器列表：&quot;);</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    //输出服务器列表</span></span><br><span class="line"><span class="string">    //std</span>::cout &lt;&lt; <span class="string">ServerNameNumber &lt;&lt; std::endl;</span></span><br><span class="line"><span class="string">    for (int OutputServerName = 0; OutputServerName &lt; ServerNameNumber</span>; OutputServerName++)</span><br><span class="line">    &#123;</span><br><span class="line">        Output(std::to_string(OutputServerName) + ADot + ServerName[OutputServerName].c_str());</span><br><span class="line">    &#125;</span><br><span class="line">    LogFile.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="Start-Server"><a href="#Start-Server" class="headerlink" title="Start Server"></a>Start Server</h2> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"> void ToStartServer(std::string args) &#123;</span><br><span class="line">    std::ofstream LogFile(LogOutputPath, std::ios::out | std::ios::app);</span><br><span class="line">    auto Output = [&amp;](const std::string&amp; text) &#123;</span><br><span class="line">        std::cout &lt;&lt; <span class="string">text &lt;&lt; std::endl;</span></span><br><span class="line"><span class="string">        LogFile &lt;&lt; text</span> &lt;&lt; <span class="string">std::endl;</span></span><br><span class="line"><span class="string">        &#125;;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    //将输入的转换为整形</span></span><br><span class="line"><span class="string">    int ServerNamePositionTotals = std</span>::atoi(args.c_str());</span><br><span class="line">    Output(<span class="string">&quot;启动服务器：&quot;</span> + ServerName[ServerNamePositionTotals]);</span><br><span class="line"></span><br><span class="line">    //将std::string ServerPosition转换到const char* ServerNamePosition</span><br><span class="line">    std::string cdServerPosition = CD + ServerFolder[ServerNamePositionTotals];</span><br><span class="line">    std::string startServer = StartString + ServerFolder[ServerNamePositionTotals] + StartBatch;</span><br><span class="line"></span><br><span class="line">    //执行命令</span><br><span class="line">    system(cdServerPosition.c_str());</span><br><span class="line">    int excuteResult = system(startServer.c_str());</span><br><span class="line">    <span class="keyword">while</span> (excuteResult != 0)</span><br><span class="line">    &#123;</span><br><span class="line">        Output(<span class="string">&quot;执行启动脚本失败！&quot;</span>);</span><br><span class="line">        <span class="built_in">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    Output(<span class="string">&quot;执行启动脚本成功！&quot;</span>);</span><br><span class="line">    Output(<span class="string">&quot;当前启动服务器：&quot;</span> + ServerName[ServerNamePositionTotals]);</span><br><span class="line">    LogFile.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="Add-Server"><a href="#Add-Server" class="headerlink" title="Add Server"></a>Add Server</h2><h5 id="Add-Server-1"><a href="#Add-Server-1" class="headerlink" title="Add Server"></a>Add Server</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br></pre></td><td class="code"><pre><span class="line">void AddServer(std::string args) &#123;</span><br><span class="line">   std::ofstream LogFile(LogOutputPath, std::ios::out | std::ios::app);</span><br><span class="line">   auto Output = [&amp;](const std::string&amp; text) &#123;</span><br><span class="line">       std::cout &lt;&lt; <span class="string">text &lt;&lt; std::endl;</span></span><br><span class="line"><span class="string">       LogFile &lt;&lt; text</span> &lt;&lt; <span class="string">std::endl;</span></span><br><span class="line"><span class="string">       &#125;;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">   const char* ServerPath = args.c_str();</span></span><br><span class="line"><span class="string">   //std</span>::wstring StartBarchWstring(StartBatch.begin(), StartBatch.end());</span><br><span class="line">   //std::wstring midServerPath(args.begin(), args.end());</span><br><span class="line">   //std::wstring ServerPositionFolder = midServerPath + StartBarchWstring;</span><br><span class="line"></span><br><span class="line">   const int ServerAbsolutePathLong = 512;</span><br><span class="line">   char ServerAbsolutePath[ServerAbsolutePathLong]&#123;&#125;;</span><br><span class="line"></span><br><span class="line">   //获取当前程序的绝对路径</span><br><span class="line">   GetCurrentDirectory(ServerAbsolutePathLong, ServerAbsolutePath);</span><br><span class="line"></span><br><span class="line">   //LPCWSTR ServerAbsolutePositionFolder = ServerPositionFolder.c_str();</span><br><span class="line"></span><br><span class="line">   //GetFullPathName(ServerAbsolutePositionFolder, MAX_PATH, ServerAbsolutePath, NULL);</span><br><span class="line"></span><br><span class="line">   std::string getServerName;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">for</span> (char get : args)</span><br><span class="line">   &#123;</span><br><span class="line">       <span class="keyword">if</span> (get != <span class="string">&#x27;.&#x27;</span> &amp;&amp; get != <span class="string">&#x27;/&#x27;</span>) &#123;</span><br><span class="line">           getServerName += get;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   Output(<span class="string">&quot;服务器名：&quot;</span> + getServerName);</span><br><span class="line"></span><br><span class="line">   CheckPCSMTFolder();</span><br><span class="line">   //如果有./PCSMT/ServerPosition.txt文件就打开，没有则创建</span><br><span class="line">   //存储ServerPosition</span><br><span class="line">   std::fstream ServerAddress(ADot + PCSMTPositionFolder + ServerPositionTxt, std::ios::out | std::ios::app);</span><br><span class="line"></span><br><span class="line">   //检查文件是否打开</span><br><span class="line">   <span class="keyword">if</span> (!ServerAddress.is_open())</span><br><span class="line">   &#123;</span><br><span class="line">       Output(<span class="string">&quot;服务器路径存储错误！打开文件时发生错误&quot;</span>);</span><br><span class="line">       ServerAddress.close();</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">else</span> &#123;</span><br><span class="line">       //std::cout &lt;&lt; <span class="string">args &lt;&lt; StartBatch &lt;&lt; std::endl;</span></span><br><span class="line"><span class="string">       //std::cout &lt;&lt; ServerPath &lt;&lt; StartBatch &lt;&lt; std::endl;</span></span><br><span class="line"><span class="string">       Output(&quot;服务器路径：&quot;);</span></span><br><span class="line"><span class="string">       Output(ServerAbsolutePath + RightSlash + getServerName + StartBatch);</span></span><br><span class="line"><span class="string">       ServerAddress &lt;&lt; ServerAbsolutePath &lt;&lt; RightSlash + getServerName &lt;&lt; StartBatch &lt;&lt; std::endl;</span></span><br><span class="line"><span class="string">       ServerAddress.close();</span></span><br><span class="line"><span class="string">       //检查Start.bat文件的存在并写入Start.bat中</span></span><br><span class="line"><span class="string">       CheckStartBatch(ServerAbsolutePath + RightSlash + getServerName);</span></span><br><span class="line"><span class="string">       //输出信息</span></span><br><span class="line"><span class="string">       Output(&quot;服务器路径存储完成！&quot;);</span></span><br><span class="line"><span class="string">   &#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">   //存储ServerName</span></span><br><span class="line"><span class="string">   ServerAddress.open(ADot + PCSMTPositionFolder + ServerNameTxt, std::ios::out | std::ios::app);</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">   if (!ServerAddress.is_open())</span></span><br><span class="line"><span class="string">   &#123;</span></span><br><span class="line"><span class="string">       Output(&quot;服务器名存储错误！打开文件时发生错误&quot;);</span></span><br><span class="line"><span class="string">       ServerAddress.close();</span></span><br><span class="line"><span class="string">   &#125;</span></span><br><span class="line"><span class="string">   else &#123;</span></span><br><span class="line"><span class="string">       </span></span><br><span class="line"><span class="string">       ServerAddress &lt;&lt; getServerName &lt;&lt; std::endl;</span></span><br><span class="line"><span class="string">       ServerAddress.close();</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       Output(&quot;服务器名存储完成！&quot;);</span></span><br><span class="line"><span class="string">   &#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">   ServerAddress.open(ADot + PCSMTPositionFolder + ServerFolderTxt, std::ios::out | std::ios::app);</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">   if (!ServerAddress.is_open())</span></span><br><span class="line"><span class="string">   &#123;</span></span><br><span class="line"><span class="string">       Output(&quot;服务器所在文件夹存储错误！打开文件时发生错误&quot;);</span></span><br><span class="line"><span class="string">       ServerAddress.close();</span></span><br><span class="line"><span class="string">   &#125;</span></span><br><span class="line"><span class="string">   else &#123;</span></span><br><span class="line"><span class="string">       Output(&quot;服务器所在文件夹：&quot;);</span></span><br><span class="line"><span class="string">       Output(ServerAbsolutePath + RightSlash + getServerName);</span></span><br><span class="line"><span class="string">       ServerAddress &lt;&lt; ServerAbsolutePath &lt;&lt; RightSlash + getServerName &lt;&lt; std::endl;</span></span><br><span class="line"><span class="string">       ServerAddress.close();</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       Output(&quot;服务器所在文件夹存储完成！&quot;);</span></span><br><span class="line"><span class="string">   &#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">   InitializationServerPosition();</span></span><br><span class="line"><span class="string">   InitializationServerName();</span></span><br><span class="line"><span class="string">   InitializationServerFolder();</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">   LogFile.close();</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
 
@@ -209,135 +183,17 @@
 <h2 id="Help"><a href="#Help" class="headerlink" title="Help"></a>Help</h2> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"> void Help(std::string args) &#123;</span><br><span class="line">    std::ofstream LogFile(LogOutputPath, std::ios::out | std::ios::app);</span><br><span class="line">    auto Output = [&amp;](const std::string&amp; text) &#123;</span><br><span class="line">        std::cout &lt;&lt; <span class="string">text &lt;&lt; std::endl;</span></span><br><span class="line"><span class="string">        LogFile &lt;&lt; text</span> &lt;&lt; <span class="string">std::endl;</span></span><br><span class="line"><span class="string">        &#125;;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    int HelpLoop = HelpQuantity;</span></span><br><span class="line"><span class="string">    int HelpPosition = 0;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    //将Help内定义的文本检查输出</span></span><br><span class="line"><span class="string">    for (size_t HelpPosition = 0; HelpPosition &lt; HelpCommandName[HelpPosition].size(); ++HelpPosition) &#123;</span></span><br><span class="line"><span class="string">        if (HelpCommandName[HelpPosition] == &quot; &quot;) &#123;</span></span><br><span class="line"><span class="string">            continue; // 如果当前元素是空格字符串，则跳过</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">        //输出信息</span></span><br><span class="line"><span class="string">        Output(HelpCommandName[HelpPosition] + TabKey + HelpCommandRole[HelpPosition] + TabKey + HelpCommandUsage[HelpPosition]);</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">    LogFile.close();</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
 <h2 id="Start"><a href="#Start" class="headerlink" title="Start"></a>Start</h2> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"> void Start(std::string args) &#123;</span><br><span class="line">    std::ofstream LogFile(LogOutputPath, std::ios::out | std::ios::app);</span><br><span class="line">    auto Output = [&amp;](const std::string&amp; text) &#123;</span><br><span class="line">        std::cout &lt;&lt; <span class="string">text &lt;&lt; std::endl;</span></span><br><span class="line"><span class="string">        LogFile &lt;&lt; text</span> &lt;&lt; <span class="string">std::endl;</span></span><br><span class="line"><span class="string">        &#125;;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    //std</span>::cout &lt;&lt; <span class="string">&quot;Start &quot;</span> &lt;&lt; <span class="string">args &lt;&lt; &quot; units&quot; &lt;&lt; std::endl;</span></span><br><span class="line"><span class="string">    //将输入转换为const char*类型的常量</span></span><br><span class="line"><span class="string">    std::string ServerPathString = StartString + args</span>;</span><br><span class="line">    const char *ServerPathChar = ServerPathString.c_str();</span><br><span class="line">    //使用system函数进行打开文件</span><br><span class="line">    system(ServerPathChar);</span><br><span class="line">    //输出信息</span><br><span class="line">    Output(<span class="string">&quot;打开文件:&quot;</span>);</span><br><span class="line">    LogFile.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="Register-Server-Commands"><a href="#Register-Server-Commands" class="headerlink" title="Register Server Commands"></a>Register Server Commands</h2> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">// 创建一个映射，用于存储指令和对应的函数</span><br><span class="line">std::map&lt;std::string, StartServer&gt; StartServerCommand;</span><br><span class="line"></span><br><span class="line">//注册指令</span><br><span class="line">void registerServerCommand(const std::string&amp; CommandName, StartServer servercmd) &#123;</span><br><span class="line">    StartServerCommand[CommandName] = servercmd;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 执行指令</span><br><span class="line">void excuteServerCommand(const std::string&amp; scLine) &#123;</span><br><span class="line">    std::ofstream LogFile(LogOutputPath, std::ios::out | std::ios::app);</span><br><span class="line">    auto Output = [&amp;](const std::string&amp; text) &#123;</span><br><span class="line">        std::cout &lt;&lt; <span class="string">text &lt;&lt; std::endl;</span></span><br><span class="line"><span class="string">        LogFile &lt;&lt; text</span> &lt;&lt; <span class="string">std::endl;</span></span><br><span class="line"><span class="string">        &#125;;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    std</span>::istringstream server(scLine);</span><br><span class="line">    std::string servercommand;</span><br><span class="line">    server &gt;&gt; servercommand;</span><br><span class="line">    <span class="keyword">if</span> (StartServerCommand.find(servercommand) != StartServerCommand.end()) &#123;</span><br><span class="line">        std::string serverargs;</span><br><span class="line">        server &gt;&gt; serverargs;</span><br><span class="line">        StartServerCommand[servercommand](serverargs);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        //输出错误信息</span><br><span class="line">        Output(<span class="string">&quot;Unkown command: &quot;</span> + servercommand);</span><br><span class="line">        Output(<span class="string">&quot;使用“help”以查询指令&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    LogFile.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-            
-        </div>
     </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2024/10/20/PCSMT-Code/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2024/10/19/PCSMT/">
-        <h2 class="post-title">PCSMT</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E7%A8%8B%E5%BA%8F/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                程序
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2024/10/19
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p><img src="/images/PCSMT.png" alt="PCSMT"></p>
-<h5 id="欢迎来到PCSMT的发布页面，这是一个关于MC的服务器管理终端的开源项目，未来将会持续更新此程序"><a href="#欢迎来到PCSMT的发布页面，这是一个关于MC的服务器管理终端的开源项目，未来将会持续更新此程序" class="headerlink" title="欢迎来到PCSMT的发布页面，这是一个关于MC的服务器管理终端的开源项目，未来将会持续更新此程序"></a>欢迎来到PCSMT的发布页面，这是一个关于MC的服务器管理终端的开源项目，未来将会持续更新此程序</h5>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/Minecraft/" style="color: #ffa2c4">Minecraft</a>
-        </span>
-        
-    </div>
-    <a href="/2024/10/19/PCSMT/" class="go-post">阅读全文</a>
-</div>
-
-
-        <div class="page-current">
     
-    <span class="current">1</span>
     
     
     
     
-</div>
-
+    
+    <div id="comment">
+        <div id="twikoo-container"></div>
     </div>
     
-    <div id="home-card">
-        <div id="card-style">
-    <div id="card-div">
-        <div class="avatar">
-            <img src="/images/avatar.jpg" alt="avatar" />
-        </div>
-        <div class="name">Ksayus</div>
-        <div class="description">
-            <p>一只猫耳正太</p>
-
-        </div>
-        
-        <div class="icon-links">
-            
-            <span class="icon-link">
-                <a target="_blank" rel="noopener" href="https://github.com/Ksayus">
-                    <i
-                        class="fa-brands fa-github fa-fw"
-                    ></i>
-                </a>
-            </span>
-            
-            <span class="icon-link">
-                <a target="_blank" rel="noopener" href="https://space.bilibili.com/558271819">
-                    <i
-                        class="fa-brands fa-bilibili fa-fw"
-                    ></i>
-                </a>
-            </span>
-            
-            <span class="icon-link">
-                <a href="mailto:2481374335@qq.com">
-                    <i
-                        class="fa-solid fa-envelope fa-fw"
-                    ></i>
-                </a>
-            </span>
-            
-        </div>
-        
-        
-        <div class="friend-links">
-            
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://Ksayus.github.io">Ksayus</a>
-            </div>
-            
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://space.bilibili.com/506610659">凛冬山雀</a>
-            </div>
-            
-        </div>
-        
-    </div>
-</div>
-
-    </div>
     
 </div>
 
@@ -369,6 +225,22 @@
         
     </div>
     <script src="/js/main.js"></script>
+    
+    
+
+
+
+<script>
+    twikoo.init({
+        el: "#twikoo-container",
+        envId: "",
+        region: "",
+        path: location.pathname,
+        lang: "",
+    })
+</script>
+
+
     
 </body>
 </html>
