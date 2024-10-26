@@ -187,11 +187,11 @@
     <div class="category-and-date">
         
         <span class="category">
-            <a href="/categories/Education/">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
-                Education
+                教程
             </a>
         </span>
         
@@ -207,172 +207,7 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <h1 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h1><hr>
-<h5 id="HTML是什么"><a href="#HTML是什么" class="headerlink" title="HTML是什么"></a>HTML是什么</h5><p>HTML是__HyperText  Markup  Language___的缩写，即__超文本标记语言__。它为我们提供了许多功能不同的__标签__，最终运行时由__浏览器__对标签进行解析，呈现出不同标签的样子。</p>
-<h3 id="基础语法-Basic-program"><a href="#基础语法-Basic-program" class="headerlink" title="基础语法 Basic program"></a><strong>基础语法 Basic program</strong></h3><ul>
-<li><p><strong>注释</strong><br><code>&lt;!-- --&gt;</code> &#x2F;&#x2F;注释<br>也可使用快捷键<code>Ctrl + /</code>打出</p>
-</li>
-<li><p><strong>基本框架</strong></p>
-</li>
-</ul>
-<pre><code class="html">&lt;!-- test --&gt;
-&lt;!doctype html&gt;
-&lt;html&gt;
-    &lt;head&gt;
-        &lt;meta charset=&quot;utf-8&quot;&gt;
-        &lt;title&gt;Test&lt;/title&gt;
-    &lt;/head&gt;
-
-    &lt;body&gt;
-        &lt;!-- content --&gt;
-    &lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<p>解读:<br><img src="/images/resources/jiedu.png" alt="解读"></p>
-<h3 id="文本标签"><a href="#文本标签" class="headerlink" title="文本标签"></a>文本标签</h3><ul>
-<li>标签标题 <code>&lt;h1&gt;&lt;/h1&gt;...&lt;h6&gt;&lt;/h6&gt;</code></li>
-<li>超链接 <code>&lt;a&gt;&lt;/a&gt;</code></li>
-<li>段落标签 <code>&lt;p&gt;&lt;/p&gt;</code></li>
-<li>图片标签 <code>&lt;img src=&quot;图片地址&quot;/&gt;</code></li>
-<li>换行 <code>&lt;br/&gt;</code></li>
-<li>标尺线 <code>&lt;hr/&gt;</code></li>
-<li>加粗 <code>&lt;b&gt;&lt;/b&gt;</code></li>
-</ul>
-<pre><code class="html">        &lt;h1&gt;标题一&lt;/h1&gt;
-        &lt;a href=&quot;跳转链接&quot;&gt;百度一下&lt;/a&gt;
-        &lt;p&gt;段落标签&lt;/p&gt;
-        &lt;img src=&quot;img/lisa.jpg&quot;/&gt;
-        &lt;br /&gt;
-        &lt;hr /&gt;
-        &lt;b&gt;END&lt;/b&gt;
-</code></pre>
-<h3 id="列表标签"><a href="#列表标签" class="headerlink" title="列表标签"></a>列表标签</h3><ul>
-<li>无序标签 <code>&lt;ul&gt;&lt;/ul&gt;</code></li>
-<li>有序列表 <code>&lt;ol&gt;&lt;/ol&gt;</code></li>
-<li>列表项 <code>&lt;li&gt;&lt;/li&gt;</code></li>
-</ul>
-<pre><code class="html">        &lt;ul&gt;
-            &lt;li&gt;无序项1&lt;/li&gt;
-            &lt;li&gt;无序项2&lt;/li&gt;
-            &lt;li&gt;无序项3&lt;/li&gt;
-        &lt;/ul&gt;
-        &lt;ol&gt;
-            &lt;li&gt;有序项1&lt;/li&gt;
-            &lt;li&gt;有序项2&lt;/li&gt;
-            &lt;li&gt;有序项3&lt;/li&gt;
-        &lt;/ol&gt;
-</code></pre>
-<h3 id="表格标签"><a href="#表格标签" class="headerlink" title="表格标签"></a>表格标签</h3><ul>
-<li>表格标签 <code>&lt;table&gt;&lt;/table&gt;</code></li>
-<li>表格中的行 <code>&lt;tr&gt;&lt;/tr&gt;</code></li>
-<li>表格的表头 <code>&lt;th&gt;&lt;/th&gt;</code></li>
-<li>表格的单元格 <code>&lt;td&gt;&lt;/td&gt;</code></li>
-</ul>
-<p><em>快速建表：table&gt;tr<em>4&gt;td</em>4   按Tab键  （生成一个4行4列的表)</em></p>
-<pre><code class="html">        &lt;!-- table 表格标签 --&gt;
-        &lt;!-- cellspacing 设置单元格与单元格之间的距离(外边距) --&gt;
-        &lt;table border=&quot;1&quot; width=400 cellspacing=&quot;0&quot;&gt;
-            &lt;!-- tr表格中的行 --&gt;
-            &lt;tr&gt;
-                &lt;!-- th 表头单元格 居中加粗--&gt;
-                &lt;th&gt;姓名&lt;/th&gt;
-                &lt;th&gt;语文&lt;/th&gt;
-                &lt;th&gt;数学&lt;/th&gt;
-                &lt;th&gt;英语&lt;/th&gt;
-            &lt;/tr&gt;
-            &lt;tr&gt;
-                &lt;td &gt;张三&lt;/td&gt;
-                &lt;td&gt;84&lt;/td&gt; 
-                &lt;td&gt;87&lt;/td&gt;
-                &lt;td&gt;94&lt;/td&gt;
-            &lt;/tr&gt;
-            &lt;tr&gt;
-                &lt;td&gt;李四&lt;/td&gt;
-                &lt;td&gt;79&lt;/td&gt;
-                &lt;td&gt;88&lt;/td&gt;
-                &lt;td&gt;92&lt;/td&gt;
-            &lt;/tr&gt;
-            &lt;tr&gt;
-                &lt;td&gt;小王&lt;/td&gt;
-                &lt;td&gt;79&lt;/td&gt;
-                &lt;td&gt;88&lt;/td&gt;
-                &lt;td&gt;92&lt;/td&gt;
-            &lt;/tr&gt;
-        &lt;/table&gt;
-</code></pre>
-<p><img src="/images/resources/biaoge.png" alt="biaoge"></p>
-<h6 id="绘制表格时的一些常用属性"><a href="#绘制表格时的一些常用属性" class="headerlink" title="绘制表格时的一些常用属性:"></a>绘制表格时的一些常用属性:</h6><p><code>- border         	 边框</code><br><code>- height         	 高度</code><br><code>- width          	 宽度</code><br><code>- align          	 内容水平方向的位置   				(left,center,right)</code><br><code>- valign         	 内容垂直方向的位置   				(top,middle,bottom)</code><br><code>- cellspacing         设置单元格与单元格之间的距离   	  (外边距)</code><br><code>- cellpadding         设置单元格内容到边框的距离   	    (内边距)</code><br><code>- bgcolor         	背景颜色</code><br><code>- colspan         	跨多列合并   						 (从哪个合并就在哪个单元格添加并删除多余的单元格)</code><br><code>- rowspan        	 跨多行合并       					 (合并完成后需要删除其他行多余的单元格) </code><br> ————————————————  </p>
-<ul>
-<li><code>th 表头单元格中的内容是居中加粗的，td 普通单元格就没有此效果</code> </li>
-<li><code>表格中的内容只能放在单元格中.</code></li>
-<li><code>绘制表格时必须要添加border边框属性，否则表格不会显示出来</code></li>
-</ul>
-<h3 id="表单标签"><a href="#表单标签" class="headerlink" title="表单标签"></a>表单标签</h3><ul>
-<li>表单区域 <code>&lt;form&gt;&lt;/form&gt;</code></li>
-<li>单行输入框 <code>&lt;input/&gt;</code></li>
-</ul>
-<p><code>&lt;input/&gt;</code>标签中提供了<code>type</code>属性，我们可以通过设置type的属性值来改变单行输入框的样式，如：</p>
-<ul>
-<li>type &#x3D; “ text “                 文本输入框</li>
-<li>type &#x3D; “ password “        密码框</li>
-<li>type &#x3D; “ radio “               单选框    (多个选项的name必须相同才能互斥)</li>
-<li>type &#x3D; “ checkbox “        多选框</li>
-</ul>
-<pre><code class="html">        &lt;!-- form标签 表示一个表单区域 --&gt;
-        &lt;form&gt;
-        账号:&lt;input type=&quot;text&quot; placeholder=&quot;请输入账号&quot; /&gt;
-             &lt;br /&gt;
-        密码:&lt;input type=&quot;password&quot; /&gt;
-            &lt;br /&gt;
-        &lt;!-- 注意:多选框和单选框的多个选项的name必须相同才能互斥 --&gt;
-        性别:&lt;input type=&quot;radio&quot; name=&quot;gender&quot; /&gt;男
-            &lt;input type=&quot;radio&quot; name=&quot;gender&quot; /&gt;女
-            &lt;br /&gt;
-        课程:&lt;input type=&quot;checkbox&quot; name=&quot;course&quot; /&gt;政治
-            &lt;input type=&quot;checkbox&quot; name=&quot;course&quot; /&gt;语文
-            &lt;input type=&quot;checkbox&quot; name=&quot;course&quot; /&gt;数学
-            &lt;input type=&quot;checkbox&quot; name=&quot;course&quot; /&gt;英语
-            &lt;br /&gt;
-        &lt;/form&gt;
-</code></pre>
-<ul>
-<li>下拉选择框 <code>&lt;select&gt;&lt;/select&gt;</code></li>
-<li>选项内容 <code>&lt;option&gt;&lt;/option&gt;</code></li>
-</ul>
-<pre><code class="html">        籍贯&lt;select&gt;
-                &lt;!-- 选择性组件必须要给默认的value --&gt;
-                &lt;option value=&quot;101&quot;&gt;陕西&lt;/option&gt;
-                &lt;option value=&quot;102&quot;&gt;四川&lt;/option&gt;
-                &lt;option value=&quot;103&quot;&gt;浙江&lt;/option&gt;
-                &lt;option value=&quot;104&quot;&gt;湖南&lt;/option&gt;	
-            &lt;/select&gt;
-</code></pre>
-<ul>
-<li>多行文本域 <code>&lt;textarea&gt;&lt;/textarea&gt;</code></li>
-</ul>
-<pre><code class="html">        &lt;!-- 可设置文本域的大小(列和行) --&gt;
-        &lt;textarea cols=&quot;30&quot; rows=&quot;10&quot;&gt;&lt;/textarea&gt;
-</code></pre>
-<ul>
-<li>按钮 钮依然写在<code>&lt;input/&gt;</code>标签中，只不过不同按钮的<code>type</code>属性不同</li>
-</ul>
-<pre><code class="html">        &lt;!-- 提交按钮，触发表单的提交动作 --&gt;
-        &lt;input type=&quot;submit&quot; value=&quot;提交&quot;/&gt;
-        &lt;!-- 重置按钮 --&gt;
-        &lt;input type=&quot;reset&quot;  value=&quot;重置&quot;/&gt;
-        &lt;!-- 普通按钮，用来绑定事件 (在JavaScript中会详细介绍) --&gt;
-        &lt;input type=&quot;button&quot; value=&quot;触发&quot;/&gt;
-</code></pre>
-<h3 id="在HTML中使用CSS"><a href="#在HTML中使用CSS" class="headerlink" title="在HTML中使用CSS"></a>在HTML中使用CSS</h3><p>CSS注释: <code>/* */</code> (Ctrl + &#x2F;)<br>在<code>&lt;head&gt;&lt;/head&gt;</code>标签中加入</p>
-<pre><code class="html">    &lt;style&gt;
-        /* CSS注释 */
-    &lt;/style&gt;
-</code></pre>
-<p>CSS样式表分为：行内样式表、内嵌样式表、外部样式表.<br><img src="/images/resources/cssuse.png" alt="cssuse"><br>简单来说就是css代码写的位置不同而已，如果标签只出现一次可以考虑使用行内样式写法。若有多组标签且样式需求一致可以使用内嵌样式写法。一般在大的项目css代码很多情况下才使用外部样式写法，也就是将css代码单独写在一个.css文件中，再在html文件中通过<code>&lt;link/&gt;</code>导入即可。</p>
-<pre><code class="html">        &lt;!-- href=&quot; .css文件位置 &quot; --&gt;
-        &lt;link rel=&quot;stylesheet&quot; href=&quot;&quot; /&gt;
-</code></pre>
-<h4 id="至此，HTML基础教程结束"><a href="#至此，HTML基础教程结束" class="headerlink" title="至此，HTML基础教程结束"></a>至此，HTML基础教程结束</h4>
+            <h2 id="HTML入门教程"><a href="#HTML入门教程" class="headerlink" title="HTML入门教程"></a>HTML入门教程</h2>
             
         </div>
     </div>
@@ -386,7 +221,7 @@
         
         <span class="tag">
             
-            <a href="/tags/HTML/" style="color: #03a9f4">HTML</a>
+            <a href="/tags/HTML/" style="color: #ffa2c4">HTML</a>
         </span>
         
     </div>
@@ -434,7 +269,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E5%8F%91%E7%99%AB/" style="color: #00a596">发癫</a>
+            <a href="/tags/%E5%8F%91%E7%99%AB/" style="color: #03a9f4">发癫</a>
         </span>
         
     </div>
@@ -482,7 +317,7 @@
         
         <span class="tag">
             
-            <a href="/tags/PCSMT/" style="color: #ff7d73">PCSMT</a>
+            <a href="/tags/PCSMT/" style="color: #00a596">PCSMT</a>
         </span>
         
     </div>
@@ -531,7 +366,7 @@
         
         <span class="tag">
             
-            <a href="/tags/Minecraft/" style="color: #03a9f4">Minecraft</a>
+            <a href="/tags/Minecraft/" style="color: #ff7d73">Minecraft</a>
         </span>
         
     </div>
