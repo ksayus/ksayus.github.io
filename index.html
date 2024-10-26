@@ -199,36 +199,6 @@
         <div class="content" v-pre>
             
             <h1 id="文本格式化"><a href="#文本格式化" class="headerlink" title="文本格式化"></a>文本格式化</h1><p>HTML 使用标签 <code>&lt;b&gt;</code>(“bold”) 与 <code>&lt;i&gt;</code>(“italic”) 对输出的文本进行格式, 如：<strong>粗体</strong> or <em>斜体</em></p>
-<p>这些HTML标签被称为格式化标签</p>
-<p>通常标签 <code>&lt;strong&gt;</code> 替换加粗标签 <code>&lt;b&gt;</code> 来使用, <code>&lt;em&gt;</code> 替换 <code>&lt;i&gt;</code>标签使用。<br>然而，这些标签的含义是不同的：<br><code>&lt;b&gt;</code> 与 <code>&lt;i&gt;</code> 定义粗体或斜体文本。<br><code>&lt;strong&gt;</code> 或者 <code>&lt;em&gt;</code>意味着你要呈现的文本是 <strong>重要</strong> 的，所以要突出显示。现今所有主要浏览器都能渲染各种效果的字体。不过，未来浏览器可能会支持更好的渲染效果。</p>
-<h3 id="HTML-文本格式化标签"><a href="#HTML-文本格式化标签" class="headerlink" title="HTML 文本格式化标签"></a>HTML 文本格式化标签</h3><ul>
-<li><code>&lt;b&gt;</code>	定义粗体文本</li>
-<li><code>&lt;em&gt;</code>	定义着重文字</li>
-<li><code>&lt;i&gt;</code>	定义斜体字</li>
-<li><code>&lt;small&gt;</code>	定义小号字</li>
-<li><code>&lt;strong&gt;</code>	定义加重语气</li>
-<li><code>&lt;sub&gt;</code>	定义下标字</li>
-<li><code>&lt;sup&gt;</code>	定义上标字</li>
-<li><code>&lt;ins&gt;</code>	定义插入字</li>
-<li><code>&lt;del&gt;</code>	定义删除字</li>
-</ul>
-<h3 id="HTML-“计算机输出”-标签"><a href="#HTML-“计算机输出”-标签" class="headerlink" title="HTML “计算机输出” 标签"></a>HTML “计算机输出” 标签</h3><ul>
-<li><code>&lt;code&gt;</code>	定义计算机代码</li>
-<li><code>&lt;kbd&gt;</code>	定义键盘码</li>
-<li><code>&lt;samp&gt;</code>	定义计算机代码样本</li>
-<li><code>&lt;var&gt;</code>	定义变量</li>
-<li><code>&lt;pre&gt;</code>	定义预格式文本</li>
-</ul>
-<h3 id="HTML-引文-引用-及标签定义"><a href="#HTML-引文-引用-及标签定义" class="headerlink" title="HTML 引文, 引用, 及标签定义"></a>HTML 引文, 引用, 及标签定义</h3><ul>
-<li><code>&lt;abbr&gt;</code>	定义缩写</li>
-<li><code>&lt;address&gt;</code>	定义地址</li>
-<li><code>&lt;bdo&gt;</code>	定义文字方向</li>
-<li><code>&lt;blockquote&gt;</code>	定义长的引用</li>
-<li><code>&lt;q&gt;</code>	定义短的引用语</li>
-<li><code>&lt;cite&gt;</code>	定义引用、引证</li>
-<li><code>&lt;dfn&gt;</code>	定义一个定义项目。</li>
-</ul>
-
             
         </div>
     </div>
@@ -259,26 +229,6 @@
         <div class="content" v-pre>
             
             <h1 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h1><p>HTML 可以将文档分割为若干段落。</p>
-<p>段落是通过 <code>&lt;p&gt;</code> 标签定义的。</p>
-<pre><code class="html">&lt;p&gt;这是一个段落 &lt;/p&gt;
-&lt;p&gt;这是另一个段落&lt;/p&gt;
-</code></pre>
-<p><strong>注</strong> ：浏览器会自动地在段落的前后添加空行。（<code>&lt;/p&gt;</code> 是 <strong>块</strong> 级元素）</p>
-<h3 id="不要忘记结束标签"><a href="#不要忘记结束标签" class="headerlink" title="不要忘记结束标签"></a>不要忘记结束标签</h3><p>即使忘了使用结束标签，大多数浏览器也会正确地将 HTML 显示出来</p>
-<pre><code class="html">&lt;p&gt;这是一个段落
-&lt;p&gt;这是另一个段落
-</code></pre>
-<p>上面的例子在大多数浏览器中都没问题，但 <strong>不要依赖这种做法</strong> 忘记使用结束标签会产生意想不到的结果和错误。<br><strong>注</strong> : 在未来的 HTML 版本中，不允许省略结束标签</p>
-<h4 id="HTML-折行"><a href="#HTML-折行" class="headerlink" title="HTML 折行"></a>HTML 折行</h4><p>如果您希望在不产生一个新段落的情况下进行换行（新行），请使用 <code>&lt;br&gt;</code> 标签：</p>
-<pre><code class="html">&lt;p&gt;这个&lt;br&gt;段落&lt;br&gt;演示了分行的效果&lt;/p&gt;
-</code></pre>
-<p><code>&lt;br /&gt;</code>元素是一个空的 HTML 元素。由于关闭标签没有任何意义，因此它没有结束标签</p>
-<h4 id="HTML-输出-使用提醒"><a href="#HTML-输出-使用提醒" class="headerlink" title="HTML 输出- 使用提醒"></a>HTML 输出- 使用提醒</h4><p>我们无法确定 HTML 被显示的确切效果。屏幕的大小，以及对窗口的调整都可能导致不同的结果。<br>对于 HTML，您无法通过在 HTML 代码中添加额外的空格或换行来改变输出的效果。<br>当显示页面时，浏览器会移除源代码中多余的空格和空行。所有连续的空格或空行都会被算作一个空格。需要注意的是，HTML 代码中的所有连续的空行（换行）也被显示为一个空格。  </p>
-<ul>
-<li><code>&lt;p&gt;</code> 	定义一个段落</li>
-<li><code>&lt;br&gt;</code>	插入单个折行（换行）</li>
-</ul>
-
             
         </div>
     </div>
@@ -318,32 +268,6 @@
         <div class="content" v-pre>
             
             <h1 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h1><p>在 HTML 文档中，标题很重要。</p>
-<p>标题（Heading）是通过 <code>&lt;h1&gt;</code> ~ <code>&lt;h6&gt;</code> 的标签进行定义的。<br><code>&lt;h1&gt;</code> 定义最大的标题。 <code>&lt;h6&gt;</code> 定义最小的标题。</p>
-<pre><code class="html">&lt;h1&gt;这是一个标题。&lt;/h1&gt;
-&lt;h2&gt;这是一个标题。&lt;/h2&gt;
-&lt;h3&gt;这是一个标题。&lt;/h3&gt;
-</code></pre>
-<p><strong>注</strong> : 浏览器会自动地在标题的前后添加空行。</p>
-<h3 id="标题很重要"><a href="#标题很重要" class="headerlink" title="标题很重要"></a>标题很重要</h3><p>请确保将 HTML 标题 标签只用于标题。不要仅仅是为了生成粗体或大号的文本而使用标题。<br>搜索引擎使用标题为您的网页的结构和内容编制索引。<br>因为用户可以通过标题来快速浏览您的网页，所以用标题来呈现文档结构是很重要的。<br>应该将 <code>&lt;h1&gt;</code> 用作主标题（最重要的），其后是 <code>&lt;h2&gt;</code>（次重要的），再其次是 <code>&lt;h3&gt;</code>，以此类推。</p>
-<h4 id="HTML-水平线"><a href="#HTML-水平线" class="headerlink" title="HTML 水平线"></a>HTML 水平线</h4><p><code>&lt;hr&gt;</code> 标签在 HTML 页面中创建水平线。<br><code>&lt;hr&gt;</code> 元素可用于分隔内容。</p>
-<pre><code class="html">&lt;p&gt;这是一个段落。&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;这是一个段落。&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;这是一个段落。&lt;/p&gt;
-</code></pre>
-<h4 id="HTML-注释"><a href="#HTML-注释" class="headerlink" title="HTML 注释"></a>HTML 注释</h4><p>可以将注释插入 HTML 代码中，这样可以提高其可读性，使代码更易被人理解。浏览器会忽略注释，也不会显示它们。<br>注释写法如下:</p>
-<pre><code class="html">&lt;!-- 这是一个注释 --&gt;
-</code></pre>
-<p><strong>注</strong> : 开始括号之后（左边的括号）需要紧跟一个叹号 <code>!</code> (<strong>英文标点符号</strong>)，结束括号之前（右边的括号）不需要，合理地使用注释可以对未来的代码编辑工作产生帮助。</p>
-<ul>
-<li><code>&lt;html&gt;</code>	定义 HTML 文档</li>
-<li><code>&lt;body&gt;</code>	定义文档的主体</li>
-<li><code>&lt;h1&gt;</code> - <code>&lt;h6&gt;</code>	定义 HTML 标题</li>
-<li><code>&lt;hr&gt;</code>	定义水平线</li>
-<li><code>&lt;!--...--&gt;</code>	定义注释</li>
-</ul>
-
             
         </div>
     </div>
@@ -392,60 +316,6 @@
         <div class="content" v-pre>
             
             <h1 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h1><p>属性是 HTML 元素提供的附加信息。</p>
-<p>属性总是以 <code>name=&quot;value&quot;</code> 的形式写在标签内，<strong>name</strong> 是属性的名称，<strong>value</strong> 是属性的值。</p>
-<ul>
-<li>HTML 元素可以设置属性</li>
-<li>属性可以在元素中添加附加信息</li>
-<li>属性一般描述于开始标签</li>
-<li>属性总是以名称&#x2F;值对的形式出现，<strong>比如：<code>name=&quot;value&quot;</code></strong></li>
-</ul>
-<h4 id="属性实例"><a href="#属性实例" class="headerlink" title="属性实例"></a>属性实例</h4><p>HTML 链接由 <code>&lt;a&gt;</code> 标签定义。链接的地址在 <code>href</code> 属性中指定：</p>
-<pre><code class="html">&lt;a href=&quot;https://github.com/ksayus&quot;&gt;这是一个链接&lt;/a&gt;
-</code></pre>
-<p>运行后：<br><a target="_blank" rel="noopener" href="https://github.com/ksayus">这是一个链接</a></p>
-<h5 id="HTML属性常用引用属性值"><a href="#HTML属性常用引用属性值" class="headerlink" title="HTML属性常用引用属性值"></a>HTML属性常用引用属性值</h5><p>属性值应该始终被包括在引号内。</p>
-<p><strong>双引号</strong> 是最常用的，不过使用 <strong>单引号</strong> 也没有问题。</p>
-<blockquote>
-<p>提示: 在某些个别的情况下，比如属性值本身就含有双引号，那么您必须使用单引号，例如：</p>
-</blockquote>
-<pre><code class="html">name=&#39;John &quot;ShotGun&quot; Nelson&#39;
-</code></pre>
-<p>HTML 属性参考手册<br>查看完整的HTML属性列表: <a target="_blank" rel="noopener" href="https://www.runoob.com/tags/html-reference.html">HTML标签参考手册</a></p>
-<p>下面列出了适用于大多数 HTML 元素的属性：</p>
-<ul>
-<li><code>class</code>	为html元素定义一个或多个类名（classname）(类名从样式文件引入)</li>
-<li><code>id</code>	定义元素的唯一id</li>
-<li><code>style</code>	规定元素的行内样式（inline style）</li>
-<li><code>title</code>	描述了元素的额外信息 (作为工具条使用)</li>
-</ul>
-<hr>
-<ol>
-<li><p>id: 给元素一个唯一的标识符，可以用于 CSS 选择器或 JavaScript 操作。<br><code>&lt;div id=&quot;header&quot;&gt;This is a header&lt;/div&gt;</code></p>
-</li>
-<li><p><code>class:</code> 给元素指定一个或多个类名，方便通过 <strong>CSS</strong> 或 <strong>JavaScript</strong> 操作。<br><code>&lt;p class=&quot;text-muted&quot;&gt;This is a paragraph.&lt;/p&gt;</code></p>
-</li>
-<li><p><code>style: </code>直接为元素定义 <strong>CSS</strong> 样式。<br><code>&lt;span style=&quot;color: red;&quot;&gt;This text is red.&lt;/span&gt;</code></p>
-</li>
-<li><p><code>href:</code> 用于 <code>&lt;a&gt;</code> 标签，指定链接目标。<br><code>&lt;a href=&quot;https://www.example.com&quot;&gt;Visit Example&lt;/a&gt;</code></p>
-</li>
-<li><p><code>src:</code> 用于 <code>&lt;img&gt;</code> 和 <code>&lt;script&gt;</code> 标签，指定资源的路径。<br><code>&lt;img src=&quot;image.jpg&quot; alt=&quot;Description&quot;&gt;</code></p>
-</li>
-<li><p><code>alt:</code> 用于 <code>&lt;img&gt;</code> 标签，提供图片的替代文本。<br><code>&lt;img src=&quot;logo.png&quot; alt=&quot;Company Logo&quot;&gt;</code></p>
-</li>
-<li><p><code>title:</code> 提供关于元素的额外信息，通常在鼠标悬停时显示。<br><code>&lt;button title=&quot;Click me&quot;&gt;Submit&lt;/button&gt;</code></p>
-</li>
-<li><p><code>name:</code> 在 <code>&lt;input&gt;</code>, <code>&lt;form&gt;</code>, <code>&lt;select&gt;</code> 等表单元素中使用，定义元素的名称。<br><code>&lt;input type=&quot;text&quot; name=&quot;username&quot;&gt;</code></p>
-</li>
-<li><p><code>value:</code> 定义表单元素的值。<br><code>&lt;input type=&quot;text&quot; value=&quot;Default text&quot;&gt;</code></p>
-</li>
-<li><p><code>target:</code>用于 <code>&lt;a&gt;</code> 标签，指定链接的打开方式（如 _blank 在新窗口中打开）。<br><code>&lt;a href=&quot;https://www.example.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Open in new tab&lt;/a&gt;</code></p>
-</li>
-<li><p><code>type:</code> 指定表单元素的类型（如 text, password, submit）。<br><code>&lt;input type=&quot;password&quot; name=&quot;password&quot;&gt;</code></p>
-</li>
-<li><p><code>placeholder:</code> 为 <code>&lt;input&gt;</code> 和 <code>&lt;textarea&gt;</code> 提供一个占位符文本。<br><code>&lt;input type=&quot;text&quot; placeholder=&quot;Enter your name&quot;&gt;</code></p>
-</li>
-</ol>
-
             
         </div>
     </div>
@@ -459,7 +329,7 @@
         
         <span class="tag">
             
-            <a href="/tags/HTML/" style="color: #03a9f4">HTML</a>
+            <a href="/tags/HTML/" style="color: #ffa2c4">HTML</a>
         </span>
         
     </div>
@@ -494,50 +364,6 @@
         <div class="content" v-pre>
             
             <h1 id="元素"><a href="#元素" class="headerlink" title="元素"></a>元素</h1><p>HTML 文档由 HTML元素定义。  </p>
-<ul>
-<li><code>&lt;p&gt;这是一个段落&lt;/p&gt;</code></li>
-<li><code>&lt;a href=&quot;&quot;&gt;这是一个链接&lt;/a&gt;</code></li>
-<li><code>&lt;br&gt;换行&lt;/br&gt;</code></li>
-</ul>
-<p>*开始标签常被称为起始标签（opening tag），结束标签常称为闭合标签（closing tag）。</p>
-<h3 id="HTML-元素语法"><a href="#HTML-元素语法" class="headerlink" title="HTML 元素语法"></a>HTML 元素语法</h3><ul>
-<li>HTML 元素以开始标签起始</li>
-<li>HTML 元素以结束标签终止</li>
-<li>元素的内容是开始标签与结束标签之间的内容</li>
-<li>某些 HTML 元素具有空内容（empty content）</li>
-<li>空元素在开始标签中进行关闭（以开始标签的结束而结束）</li>
-<li>大多数 HTML 元素可拥有属性</li>
-</ul>
-<p>大多数 HTML 元素可以嵌套（ <strong>HTML 元素可以包含其他 HTML 元素</strong> ）。<br>HTML 文档由相互嵌套的 HTML 元素构成。</p>
-<h5 id="元素-1"><a href="#元素-1" class="headerlink" title="&lt;p&gt; 元素:"></a><code>&lt;p&gt;</code> 元素:</h5><pre><code class="html">    &lt;p&gt;这是第一个段落。&lt;/p&gt;
-</code></pre>
-<p>这个 <code>&lt;p&gt;</code> 元素定义了 HTML 文档中的一个段落。<br>这个元素拥有一个开始标签 <code>&lt;p&gt;</code> 以及一个结束标签 <code>&lt;/p&gt;</code>.<br>元素内容是: 这是第一个段落。</p>
-<h5 id="元素-2"><a href="#元素-2" class="headerlink" title="&lt;body&gt; 元素:"></a><code>&lt;body&gt;</code> 元素:</h5><pre><code class="html">&lt;body&gt;
-&lt;p&gt;这是第一个段落。&lt;/p&gt;
-&lt;/body&gt;
-</code></pre>
-<p><code>&lt;body&gt;</code> 元素定义了 HTML 文档的主体。<br>这个元素拥有一个开始标签 <code>&lt;body&gt;</code> 以及一个结束标签 <code>&lt;/body&gt;</code>。<br>元素内容是另一个 HTML 元素（<code>&lt;p&gt;</code> 元素）。</p>
-<h5 id="元素："><a href="#元素：" class="headerlink" title="&lt;html&gt; 元素："></a><code>&lt;html&gt;</code> 元素：</h5><pre><code class="html">&lt;html&gt;
-
-&lt;body&gt;
-&lt;p&gt;这是第一个段落。&lt;/p&gt;
-&lt;/body&gt;
-
-&lt;/html&gt;
-</code></pre>
-<p><code>&lt;html&gt;</code> 元素定义了整个 HTML 文档。<br>这个元素拥有一个开始标签 <code>&lt;html&gt;</code> ，以及一个结束标签 <code>&lt;/html&gt;</code>.<br>元素内容是另一个 HTML 元素（<code>&lt;body&gt;</code> 元素）。</p>
-<h4 id="不要忘记结束标签"><a href="#不要忘记结束标签" class="headerlink" title="不要忘记结束标签"></a>不要忘记结束标签</h4><p>即使您忘记了使用结束标签，大多数浏览器也会正确地显示 HTML：</p>
-<pre><code class="html">&lt;p&gt;这是一个段落
-&lt;p&gt;这是一个段落
-</code></pre>
-<p>以上实例在浏览器中也能正常显示，因为关闭标签是可选的。</p>
-<p>但 <strong>不要依赖这种做法</strong> 忘记使用结束标签会产生不可预料的结果或错误。</p>
-<h5 id="HTML-空元素"><a href="#HTML-空元素" class="headerlink" title="HTML 空元素"></a>HTML 空元素</h5><p>没有内容的 HTML 元素被称为空元素。空元素是在开始标签中关闭的。</p>
-<p><code>&lt;br&gt;</code> 就是没有关闭标签的空元素（<code>&lt;br&gt;</code> 标签定义换行）。</p>
-<p>在 XHTML、XML 以及未来版本的 HTML 中，所有元素都必须被关闭。</p>
-<p>在开始标签中添加斜杠，比如 <code>&lt;br /&gt;</code>，是关闭空元素的正确方法，HTML、XHTML 和 XML 都接受这种方式。</p>
-<p>即使 <code>&lt;br&gt;</code> 在所有浏览器中都是有效的，但使用 <code>&lt;br /&gt;</code> 其实是 <strong>更长远</strong> 的保障。</p>
-
             
         </div>
     </div>
@@ -599,7 +425,7 @@
         
         <span class="tag">
             
-            <a href="/tags/CSS/" style="color: #ffa2c4">CSS</a>
+            <a href="/tags/CSS/" style="color: #00a596">CSS</a>
         </span>
         
     </div>
@@ -647,7 +473,7 @@
         
         <span class="tag">
             
-            <a href="/tags/HTML/" style="color: #ffa2c4">HTML</a>
+            <a href="/tags/HTML/" style="color: #ff7d73">HTML</a>
         </span>
         
     </div>
@@ -792,7 +618,7 @@
         
         <span class="tag">
             
-            <a href="/tags/Minecraft/" style="color: #ff7d73">Minecraft</a>
+            <a href="/tags/Minecraft/" style="color: #ffa2c4">Minecraft</a>
         </span>
         
     </div>
