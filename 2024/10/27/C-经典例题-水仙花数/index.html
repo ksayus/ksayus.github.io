@@ -3,7 +3,7 @@
 <html lang="cn">
 <head>
     <meta charset="utf-8" />
-    <title>HTML属性 | Ksayus の 猫窝</title>
+    <title>C++经典例题-水仙花数 | Ksayus の 猫窝</title>
     <meta name="author" content="Ksayus" />
     <meta name="description" content="喵~" />
     <meta name="keywords" content="" />
@@ -158,14 +158,14 @@
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <div class="article">
     <div>
-        <h1>HTML属性</h1>
+        <h1>C++经典例题-水仙花数</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2024/10/26
+            2024/10/27
         </span>
         
         <span class="category">
@@ -186,8 +186,8 @@
             
             <span class="tag">
                 
-                <a href="/tags/HTML/" style="color: #03a9f4">
-                    HTML
+                <a href="/tags/C/" style="color: #00bcd4">
+                    C++
                 </a>
             </span>
             
@@ -196,62 +196,67 @@
     </div>
     
     <div class="content" v-pre>
-        <h1 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h1><p>属性是 HTML 元素提供的附加信息。</p>
-<span id="more"></span>
+        <h1 id="水仙花数"><a href="#水仙花数" class="headerlink" title="水仙花数"></a>水仙花数</h1><h3 id="什么是水仙花数？"><a href="#什么是水仙花数？" class="headerlink" title="什么是水仙花数？"></a>什么是水仙花数？</h3><p>水仙花数是指一个 3 位数，它的每个数位上的数字的 <strong>3</strong> 次幂之和等于它本身的一个数</p>
+<span id="more"></span>  
+<p>例：<br><code>1^3 + 5^3+ 3^3 = 153</code></p>
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>我们需要对每个三位数进行拆分计算，将符合水仙花数的数输出到控制台<br>对于所有三位数，我们可以知道，是 <strong>100~999</strong> 之间的数字<br>可以使用 <code>for</code> 循环或者 <code>while</code>循环解题</p>
+<h4 id="for-循环"><a href="#for-循环" class="headerlink" title="for 循环"></a>for 循环</h4><pre><code class="cpp">for (int i = 100; i &lt;= 999; i++)
+&#123;
+&#125;
+</code></pre>
+<h4 id="while-循环"><a href="#while-循环" class="headerlink" title="while 循环"></a>while 循环</h4><pre><code class="cpp">int j = 100;
+while (j != 1000)
+&#123;
+    j++;
+&#125;
+</code></pre>
+<h3 id="拆解数字"><a href="#拆解数字" class="headerlink" title="拆解数字"></a>拆解数字</h3><p>三位数的表示搞定了，那数字拆分呢？<br>很简单，只需要使用运算符就能解决就行</p>
+<p>获取百位</p>
+<pre><code class="cpp">int num_100 = i / 100;
+</code></pre>
+<p>获取十位</p>
+<pre><code class="cpp">int num_10 = i % 100 / 10;
+</code></pre>
+<p>获取个位</p>
+<pre><code class="cpp">int num_1 = i % 100 % 10;
+</code></pre>
+<p>这样就实现了对每个三位数各个位置的数的获取</p>
+<p>接下来就是求这三个数的 <strong>3</strong> 次幂之和了</p>
+<pre><code class="cpp">int sum = (num_100 * num_100 * num_100) + (num_10 * num_10 * num_10) + (num_1 * num_1 * num_1);;
+</code></pre>
+<p>求完和，就到了对比环节，使用 <code>if</code> 判断句进行判断，若相同就输出，不相同不进行任何操作</p>
+<pre><code class="cpp">if (sum == i)
+&#123;
+    cout &lt;&lt; i &lt;&lt; endl;
+&#125;
+</code></pre>
+<p>运行结果：<br><img src="/images/resources/shuixianhuashu.png" alt="shuixianhuashu"></p>
+<h2 id="至此，程序完成！"><a href="#至此，程序完成！" class="headerlink" title="至此，程序完成！"></a>至此，程序完成！</h2><p>完整代码:</p>
+<pre><code class="cpp">#include &lt;iostream&gt;
+using namespace std;
+int main()
+&#123;
+    for (int i = 100; i &lt;= 999; i++)
+    &#123;
+        int num_100 = i / 100;
+        int num_10 = i % 100 / 10;
+        int num_1 = i % 100 % 10;
 
-<p>属性总是以 <code>name=&quot;value&quot;</code> 的形式写在标签内，<strong>name</strong> 是属性的名称，<strong>value</strong> 是属性的值。</p>
-<ul>
-<li>HTML 元素可以设置属性</li>
-<li>属性可以在元素中添加附加信息</li>
-<li>属性一般描述于开始标签</li>
-<li>属性总是以名称&#x2F;值对的形式出现，<strong>比如：<code>name=&quot;value&quot;</code></strong></li>
-</ul>
-<h4 id="属性实例"><a href="#属性实例" class="headerlink" title="属性实例"></a>属性实例</h4><p>HTML 链接由 <code>&lt;a&gt;</code> 标签定义。链接的地址在 <code>href</code> 属性中指定：</p>
-<pre><code class="html">&lt;a href=&quot;https://github.com/ksayus&quot;&gt;这是一个链接&lt;/a&gt;
+        int sum = (num_100 * num_100 * num_100) + (num_10 * num_10 * num_10) + (num_1 * num_1 * num_1);;
+        if (sum == i)
+        &#123;
+            cout &lt;&lt; i &lt;&lt; endl;
+        &#125;
+    &#125;
+    /*int j = 100;
+    while (j != 1000)
+    &#123;
+        j++;
+    &#125;*/
+    system(&quot;pause&quot;);
+    return 0;
+&#125;
 </code></pre>
-<p>运行后：<br><a target="_blank" rel="noopener" href="https://github.com/ksayus">这是一个链接</a></p>
-<h5 id="HTML属性常用引用属性值"><a href="#HTML属性常用引用属性值" class="headerlink" title="HTML属性常用引用属性值"></a>HTML属性常用引用属性值</h5><p>属性值应该始终被包括在引号内。</p>
-<p><strong>双引号</strong> 是最常用的，不过使用 <strong>单引号</strong> 也没有问题。</p>
-<blockquote>
-<p>提示: 在某些个别的情况下，比如属性值本身就含有双引号，那么您必须使用单引号，例如：</p>
-</blockquote>
-<pre><code class="html">name=&#39;John &quot;ShotGun&quot; Nelson&#39;
-</code></pre>
-<p>HTML 属性参考手册<br>查看完整的HTML属性列表: <a target="_blank" rel="noopener" href="https://www.runoob.com/tags/html-reference.html">HTML标签参考手册</a></p>
-<p>下面列出了适用于大多数 HTML 元素的属性：</p>
-<ul>
-<li><code>class</code>	为html元素定义一个或多个类名（classname）(类名从样式文件引入)</li>
-<li><code>id</code>	定义元素的唯一id</li>
-<li><code>style</code>	规定元素的行内样式（inline style）</li>
-<li><code>title</code>	描述了元素的额外信息 (作为工具条使用)</li>
-</ul>
-<hr>
-<ol>
-<li><p>id: 给元素一个唯一的标识符，可以用于 CSS 选择器或 JavaScript 操作。<br><code>&lt;div id=&quot;header&quot;&gt;This is a header&lt;/div&gt;</code></p>
-</li>
-<li><p><code>class:</code> 给元素指定一个或多个类名，方便通过 <strong>CSS</strong> 或 <strong>JavaScript</strong> 操作。<br><code>&lt;p class=&quot;text-muted&quot;&gt;This is a paragraph.&lt;/p&gt;</code></p>
-</li>
-<li><p><code>style: </code>直接为元素定义 <strong>CSS</strong> 样式。<br><code>&lt;span style=&quot;color: red;&quot;&gt;This text is red.&lt;/span&gt;</code></p>
-</li>
-<li><p><code>href:</code> 用于 <code>&lt;a&gt;</code> 标签，指定链接目标。<br><code>&lt;a href=&quot;https://www.example.com&quot;&gt;Visit Example&lt;/a&gt;</code></p>
-</li>
-<li><p><code>src:</code> 用于 <code>&lt;img&gt;</code> 和 <code>&lt;script&gt;</code> 标签，指定资源的路径。<br><code>&lt;img src=&quot;image.jpg&quot; alt=&quot;Description&quot;&gt;</code></p>
-</li>
-<li><p><code>alt:</code> 用于 <code>&lt;img&gt;</code> 标签，提供图片的替代文本。<br><code>&lt;img src=&quot;logo.png&quot; alt=&quot;Company Logo&quot;&gt;</code></p>
-</li>
-<li><p><code>title:</code> 提供关于元素的额外信息，通常在鼠标悬停时显示。<br><code>&lt;button title=&quot;Click me&quot;&gt;Submit&lt;/button&gt;</code></p>
-</li>
-<li><p><code>name:</code> 在 <code>&lt;input&gt;</code>, <code>&lt;form&gt;</code>, <code>&lt;select&gt;</code> 等表单元素中使用，定义元素的名称。<br><code>&lt;input type=&quot;text&quot; name=&quot;username&quot;&gt;</code></p>
-</li>
-<li><p><code>value:</code> 定义表单元素的值。<br><code>&lt;input type=&quot;text&quot; value=&quot;Default text&quot;&gt;</code></p>
-</li>
-<li><p><code>target:</code>用于 <code>&lt;a&gt;</code> 标签，指定链接的打开方式（如 _blank 在新窗口中打开）。<br><code>&lt;a href=&quot;https://www.example.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Open in new tab&lt;/a&gt;</code></p>
-</li>
-<li><p><code>type:</code> 指定表单元素的类型（如 text, password, submit）。<br><code>&lt;input type=&quot;password&quot; name=&quot;password&quot;&gt;</code></p>
-</li>
-<li><p><code>placeholder:</code> 为 <code>&lt;input&gt;</code> 和 <code>&lt;textarea&gt;</code> 提供一个占位符文本。<br><code>&lt;input type=&quot;text&quot; placeholder=&quot;Enter your name&quot;&gt;</code></p>
-</li>
-</ol>
 
     </div>
     
