@@ -3,7 +3,7 @@
 <html lang="cn">
 <head>
     <meta charset="utf-8" />
-    <title>补药开学 | Ksayus の 猫窝</title>
+    <title>HTML段落 | Ksayus の 猫窝</title>
     <meta name="author" content="Ksayus" />
     <meta name="description" content="喵~" />
     <meta name="keywords" content="" />
@@ -158,47 +158,41 @@
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <div class="article">
     <div>
-        <h1>补药开学</h1>
+        <h1>HTML段落</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2024/10/20
+            2024/10/26
         </span>
         
-        <span class="category">
-            <a href="/categories/%E6%97%A5%E5%B8%B8/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                日常
-            </a>
-        </span>
-        
-        
-        <span class="tags">
-            <span class="icon">
-                <i class="fa-solid fa-tags fa-fw"></i>
-            </span>
-            
-            
-            <span class="tag">
-                
-                <a href="/tags/%E5%8F%91%E7%99%AB/" style="color: #ff7d73">
-                    发癫
-                </a>
-            </span>
-            
-        </span>
         
     </div>
     
     <div class="content" v-pre>
-        <h1 id="补药开学啊"><a href="#补药开学啊" class="headerlink" title="补药开学啊!!!"></a>补药开学啊!!!</h1><span id="more"></span>
-<h4 id="真的会爆炸"><a href="#真的会爆炸" class="headerlink" title="真的会爆炸"></a>真的会爆炸</h4><p><img src="/images/resources/redtempertrue.png" alt="redtemperture"></p>
-<h3 id="死德恒我跟你爆了"><a href="#死德恒我跟你爆了" class="headerlink" title="死德恒我跟你爆了"></a>死德恒我跟你爆了</h3>
+        <h1 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h1><p>HTML 可以将文档分割为若干段落。</p>
+<p>段落是通过 <code>&lt;p&gt;</code> 标签定义的。</p>
+<pre><code class="html">&lt;p&gt;这是一个段落 &lt;/p&gt;
+&lt;p&gt;这是另一个段落&lt;/p&gt;
+</code></pre>
+<p><strong>注</strong> ：浏览器会自动地在段落的前后添加空行。（<code>&lt;/p&gt;</code> 是 <strong>块</strong> 级元素）</p>
+<h3 id="不要忘记结束标签"><a href="#不要忘记结束标签" class="headerlink" title="不要忘记结束标签"></a>不要忘记结束标签</h3><p>即使忘了使用结束标签，大多数浏览器也会正确地将 HTML 显示出来</p>
+<pre><code class="html">&lt;p&gt;这是一个段落
+&lt;p&gt;这是另一个段落
+</code></pre>
+<p>上面的例子在大多数浏览器中都没问题，但 <strong>不要依赖这种做法</strong> 忘记使用结束标签会产生意想不到的结果和错误。<br><strong>注</strong> : 在未来的 HTML 版本中，不允许省略结束标签</p>
+<h4 id="HTML-折行"><a href="#HTML-折行" class="headerlink" title="HTML 折行"></a>HTML 折行</h4><p>如果您希望在不产生一个新段落的情况下进行换行（新行），请使用 <code>&lt;br&gt;</code> 标签：</p>
+<pre><code class="html">&lt;p&gt;这个&lt;br&gt;段落&lt;br&gt;演示了分行的效果&lt;/p&gt;
+</code></pre>
+<p><code>&lt;br /&gt;</code>元素是一个空的 HTML 元素。由于关闭标签没有任何意义，因此它没有结束标签</p>
+<h4 id="HTML-输出-使用提醒"><a href="#HTML-输出-使用提醒" class="headerlink" title="HTML 输出- 使用提醒"></a>HTML 输出- 使用提醒</h4><p>我们无法确定 HTML 被显示的确切效果。屏幕的大小，以及对窗口的调整都可能导致不同的结果。<br>对于 HTML，您无法通过在 HTML 代码中添加额外的空格或换行来改变输出的效果。<br>当显示页面时，浏览器会移除源代码中多余的空格和空行。所有连续的空格或空行都会被算作一个空格。需要注意的是，HTML 代码中的所有连续的空行（换行）也被显示为一个空格。  </p>
+<ul>
+<li><code>&lt;p&gt;</code> 	定义一个段落</li>
+<li><code>&lt;br&gt;</code>	插入单个折行（换行）</li>
+</ul>
+
     </div>
     
     

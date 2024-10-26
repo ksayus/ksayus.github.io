@@ -3,7 +3,7 @@
 <html lang="cn">
 <head>
     <meta charset="utf-8" />
-    <title>补药开学 | Ksayus の 猫窝</title>
+    <title>HTML元素 | Ksayus の 猫窝</title>
     <meta name="author" content="Ksayus" />
     <meta name="description" content="喵~" />
     <meta name="keywords" content="" />
@@ -158,22 +158,22 @@
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <div class="article">
     <div>
-        <h1>补药开学</h1>
+        <h1>HTML元素</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2024/10/20
+            2024/10/26
         </span>
         
         <span class="category">
-            <a href="/categories/%E6%97%A5%E5%B8%B8/">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
-                日常
+                教程
             </a>
         </span>
         
@@ -186,8 +186,8 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E5%8F%91%E7%99%AB/" style="color: #ff7d73">
-                    发癫
+                <a href="/tags/HTML/" style="color: #03a9f4">
+                    HTML
                 </a>
             </span>
             
@@ -196,9 +196,51 @@
     </div>
     
     <div class="content" v-pre>
-        <h1 id="补药开学啊"><a href="#补药开学啊" class="headerlink" title="补药开学啊!!!"></a>补药开学啊!!!</h1><span id="more"></span>
-<h4 id="真的会爆炸"><a href="#真的会爆炸" class="headerlink" title="真的会爆炸"></a>真的会爆炸</h4><p><img src="/images/resources/redtempertrue.png" alt="redtemperture"></p>
-<h3 id="死德恒我跟你爆了"><a href="#死德恒我跟你爆了" class="headerlink" title="死德恒我跟你爆了"></a>死德恒我跟你爆了</h3>
+        <h1 id="元素"><a href="#元素" class="headerlink" title="元素"></a>元素</h1><p>HTML 文档由 HTML元素定义。  </p>
+<ul>
+<li><code>&lt;p&gt;这是一个段落&lt;/p&gt;</code></li>
+<li><code>&lt;a href=&quot;&quot;&gt;这是一个链接&lt;/a&gt;</code></li>
+<li><code>&lt;br&gt;换行&lt;/br&gt;</code></li>
+</ul>
+<p>*开始标签常被称为起始标签（opening tag），结束标签常称为闭合标签（closing tag）。</p>
+<h3 id="HTML-元素语法"><a href="#HTML-元素语法" class="headerlink" title="HTML 元素语法"></a>HTML 元素语法</h3><ul>
+<li>HTML 元素以开始标签起始</li>
+<li>HTML 元素以结束标签终止</li>
+<li>元素的内容是开始标签与结束标签之间的内容</li>
+<li>某些 HTML 元素具有空内容（empty content）</li>
+<li>空元素在开始标签中进行关闭（以开始标签的结束而结束）</li>
+<li>大多数 HTML 元素可拥有属性</li>
+</ul>
+<p>大多数 HTML 元素可以嵌套（ <strong>HTML 元素可以包含其他 HTML 元素</strong> ）。<br>HTML 文档由相互嵌套的 HTML 元素构成。</p>
+<h5 id="元素-1"><a href="#元素-1" class="headerlink" title="&lt;p&gt; 元素:"></a><code>&lt;p&gt;</code> 元素:</h5><pre><code class="html">    &lt;p&gt;这是第一个段落。&lt;/p&gt;
+</code></pre>
+<p>这个 <code>&lt;p&gt;</code> 元素定义了 HTML 文档中的一个段落。<br>这个元素拥有一个开始标签 <code>&lt;p&gt;</code> 以及一个结束标签 <code>&lt;/p&gt;</code>.<br>元素内容是: 这是第一个段落。</p>
+<h5 id="元素-2"><a href="#元素-2" class="headerlink" title="&lt;body&gt; 元素:"></a><code>&lt;body&gt;</code> 元素:</h5><pre><code class="html">&lt;body&gt;
+&lt;p&gt;这是第一个段落。&lt;/p&gt;
+&lt;/body&gt;
+</code></pre>
+<p><code>&lt;body&gt;</code> 元素定义了 HTML 文档的主体。<br>这个元素拥有一个开始标签 <code>&lt;body&gt;</code> 以及一个结束标签 <code>&lt;/body&gt;</code>。<br>元素内容是另一个 HTML 元素（<code>&lt;p&gt;</code> 元素）。</p>
+<h5 id="元素："><a href="#元素：" class="headerlink" title="&lt;html&gt; 元素："></a><code>&lt;html&gt;</code> 元素：</h5><pre><code class="html">&lt;html&gt;
+
+&lt;body&gt;
+&lt;p&gt;这是第一个段落。&lt;/p&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+<p><code>&lt;html&gt;</code> 元素定义了整个 HTML 文档。<br>这个元素拥有一个开始标签 <code>&lt;html&gt;</code> ，以及一个结束标签 <code>&lt;/html&gt;</code>.<br>元素内容是另一个 HTML 元素（<code>&lt;body&gt;</code> 元素）。</p>
+<h4 id="不要忘记结束标签"><a href="#不要忘记结束标签" class="headerlink" title="不要忘记结束标签"></a>不要忘记结束标签</h4><p>即使您忘记了使用结束标签，大多数浏览器也会正确地显示 HTML：</p>
+<pre><code class="html">&lt;p&gt;这是一个段落
+&lt;p&gt;这是一个段落
+</code></pre>
+<p>以上实例在浏览器中也能正常显示，因为关闭标签是可选的。</p>
+<p>但 <strong>不要依赖这种做法</strong> 忘记使用结束标签会产生不可预料的结果或错误。</p>
+<h5 id="HTML-空元素"><a href="#HTML-空元素" class="headerlink" title="HTML 空元素"></a>HTML 空元素</h5><p>没有内容的 HTML 元素被称为空元素。空元素是在开始标签中关闭的。</p>
+<p><code>&lt;br&gt;</code> 就是没有关闭标签的空元素（<code>&lt;br&gt;</code> 标签定义换行）。</p>
+<p>在 XHTML、XML 以及未来版本的 HTML 中，所有元素都必须被关闭。</p>
+<p>在开始标签中添加斜杠，比如 <code>&lt;br /&gt;</code>，是关闭空元素的正确方法，HTML、XHTML 和 XML 都接受这种方式。</p>
+<p>即使 <code>&lt;br&gt;</code> 在所有浏览器中都是有效的，但使用 <code>&lt;br /&gt;</code> 其实是 <strong>更长远</strong> 的保障。</p>
+
     </div>
     
     
