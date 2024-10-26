@@ -1,0 +1,371 @@
+
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="utf-8" />
+    <title>CSS基础教学 | Ksayus の 猫窝</title>
+    <meta name="author" content="Ksayus" />
+    <meta name="description" content="喵~" />
+    <meta name="keywords" content="" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link rel="icon" href="/images/basic/avatar.jpg" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.cn" />
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.cn/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
+/>
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+<script src="https://s4.zstatic.net/ajax/libs/twikoo/1.6.31/twikoo.all.min.js"></script>
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="/images/basic/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>KSAYUS の 猫窝</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;主页</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;文章</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;分类</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;标签</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;关于</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;KSAYUS の 猫窝</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">主页</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">文章</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">分类</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">标签</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">关于</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>CSS基础教学</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2024/10/26
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                教程
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/CSS/" style="color: #ff7d73">
+                    CSS
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h1 id="CSS入门教程"><a href="#CSS入门教程" class="headerlink" title="CSS入门教程"></a>CSS入门教程</h1><span id="more"></span>
+<h2 id="CSS是什么"><a href="#CSS是什么" class="headerlink" title="CSS是什么"></a>CSS是什么</h2><p>css是一种样式表语言，它提供了许多属性来对Html标签进行修饰，使我们的页面更加美观。</p>
+<h3 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h3><p>我们把对文本样式进行定义和修饰的CSS代码写在<code>&lt;style&gt;&lt;/style&gt;</code>中。<br>注释：  <code>/* */</code>         （Ctrl + &#x2F;）  </p>
+<p>CSS样式表分为：行内样式表、内嵌样式表、外部样式表.<br><img src="/images/resources/cssuse.png" alt="cssuse"><br>简单来说就是css代码写的位置不同而已，如果标签只出现一次可以考虑使用行内样式写法。若有多组标签且样式需求一致可以使用内嵌样式写法。一般在大的项目css代码很多情况下才使用外部样式写法，也就是将css代码单独写在一个.css文件中，再在html文件中通过<code>&lt;link/&gt;</code>导入即可。</p>
+<pre><code class="html">        &lt;!-- href=&quot; .css文件位置 &quot; --&gt;
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;&quot; /&gt;
+</code></pre>
+<h3 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h3><p>选择器是将样式表和标签进行匹配的，常用选择器有4种：</p>
+<ul>
+<li>标签选择器 ：匹配页面中所有的指定标签</li>
+<li>id选择器 ：匹配id值唯一的一个标签</li>
+<li>类选择器 ：匹配class属性相同的一组标签</li>
+<li>通配选择器 ：匹配页面中所有标签</li>
+</ul>
+<pre><code class="html">    &lt;style&gt;
+            /* 标签选择器 */
+            p&#123; &#125;
+            /* id选择器 */
+            #shell&#123; &#125;
+            /* 类选择器 */
+            .content&#123; &#125;
+            /* 通配选择器 */
+            *&#123; &#125;	
+    &lt;/style&gt;
+    &lt;body&gt;
+        &lt;p&gt;&lt;/p&gt;
+        &lt;div id=&quot;shell&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;content&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;content&quot;&gt;&lt;/div&gt;
+        &lt;h1&gt;&lt;/h1&gt;
+    &lt;/body&gt;
+</code></pre>
+<h4 id="修饰文本"><a href="#修饰文本" class="headerlink" title="修饰文本"></a>修饰文本</h4><p><img src="/images/resources/consttext.png" alt="consttext"></p>
+<h4 id="修饰背景"><a href="#修饰背景" class="headerlink" title="修饰背景"></a>修饰背景</h4><p><img src="/images/resources/constbackground.png" alt="constbackground"></p>
+<h4 id="透明度"><a href="#透明度" class="headerlink" title="透明度"></a>透明度</h4><p>CSS中 <strong>opacity属性</strong> 是用来定义透明度的，并且规定范围是从 <code>0.0 ~ 1.0  ( 完全透明 ~ 完全不透明 )</code></p>
+<pre><code class="html">        &lt;style&gt;
+            #photo&#123;
+                opacity: 0.5; /*完全透明 0.0 ~~ 1.0 完全不透明*/
+            &#125;
+        &lt;/style&gt;
+    &lt;body&gt;
+        &lt;!-- 原图 --&gt;
+        &lt;img src=&quot;/images/resources/boom.png&quot; /&gt;
+        &lt;!-- 设置半透明 --&gt;
+        &lt;img src=&quot;/images/resources/boom.png&quot; id=&quot;photo&quot;/&gt;
+    &lt;/body&gt;
+</code></pre>
+<p>效果如下：<br><img src="/images/resources/toumingduduibi.png" alt="toumingduduibi"></p>
+<h3 id="伪类"><a href="#伪类" class="headerlink" title="伪类"></a>伪类</h3><p>CSS伪类专门用来表示标签的一种的特殊的状态，常用的伪类有：</p>
+<ul>
+<li>hover   表示鼠标移入的状态</li>
+<li>active   表示被点击的状态</li>
+<li>focus   向拥有键盘输入焦点(例如输入框)的标签添加样式</li>
+</ul>
+<pre><code class="html">        &lt;style&gt;
+            #photo&#123;
+                opacity: 0.5; 
+            &#125;
+            #photo:hover&#123;
+                opacity: 1.0;
+            &#125;
+        &lt;/style&gt;
+    &lt;body&gt;
+        &lt;img src=&quot;img/lisa.jpg&quot; id=&quot;photo&quot;/&gt;
+    &lt;/body&gt;
+</code></pre>
+<p><em>此段代码表示当鼠标移入图片时，图片的样式从原本的半透明转变为完全不透明</em></p>
+<h3 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h3><p>CSS处理网页时，它认为每个标签都包含在一个不可见的盒子里，如果把所有的标签都想象成盒子，那么我们对网页的布局就相当于是摆放盒子，只需要将相应的盒子摆放到网页中相应的位置即可完成网页的布局。</p>
+<p>一个盒子分为4个部分：内容区、内边距、边框、外边距</p>
+<ul>
+<li><blockquote>
+<p><strong>标签大小 &#x3D; 内容区大小 + 内边距大小 + 边框</strong></p>
+</blockquote>
+</li>
+</ul>
+<p><img src="/images/resources/boxexmple.png" alt="boxexmple"><br><code>content:</code>内容区指盒子中放标签内容的区域，子标签都存在于内容区中。width和 height两个属性就是设置内容区大小的。如果没有为标签设置内边距和边框，则内容区大小默认和盒子大小一致。<br><code>padding:</code>内边距指标签内容区到边框以内的区域。内边距会影响整个盒子的大小(涉及计算问题)<br><code>border:</code>边框是标签可见框的最外部，也会算在标签大小中。 边框的三要素有：宽度 width、颜色 color、样式 style，三者缺一不可。<br><code>margin:</code>外边距指标签边框与周围其他标签相距的区域，外边距不影响盒子的整体大小 ，但是会影响盒子的位置。</p>
+<ul>
+<li><blockquote>
+<p>若想使标签位置水平居中可以将margin设置为auto，这样浏览器会将左右外边距设置为相等，但要注意：若把标签上下外边距设置为auto，不会使标签垂直居中，外边距依然为0，上下外边距需要给具体的值。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h3><p>由于网页默认是一个二维平面，当我们在网页中一行行摆放标签时，块标签会独占一行，行标签则只占自身大小，这种情况下要实现网页布局就很麻烦，所以我们就需要通过一些方法来改变这种默认的布局方式。</p>
+<p>CSS中的浮动属性可以<code>让标签脱离原来的文档流</code>，也就是二维平面，浮动后的标签默认是内容的大小，且可以为其设置宽和高。</p>
+<p>但是浮动后的标签不占用原来文档流的空间，下面的标签就会向上移动，会影响后面的网页布局，所以我们通常<code>在浮动的标签后使用清除浮动属性</code>，自动让父级标签撑开<br><img src="/images/resources/floatexmple.png" alt="floatexmple"></p>
+<h3 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h3><p><code>position</code> 属性规定应用于元素的定位方法的类型（static、relative、fixed、absolute 或 sticky）</p>
+<p>➱ <code>position: static;   （默认）</code><br>HTML元素默认情况下的定位方式为 static（静态），静态定位的元素不受 top、bottom、left 和 right 属性的影响，不会以任何特殊方式定位，它始终根据页面的正常流进行定位。</p>
+<p>➱ <code>固定定位    position: fixed; </code><br>固定定位的元素是相对于视口定位的，即使滚动页面，它也始终位于同一位置。 top、right、bottom 和 left 属性用于定位此元素。</p>
+<p>➱ <code>相对定位    position: relative; </code>      (相对定位和绝对定位是我们常用的 )<br>元素相对于其正常位置进行定位。设置相对定位的元素的 top、right、bottom 和 left 属性将导致其偏离其正常位置进行调整。不会对其余内容进行调整来适应元素留下的任何空间。</p>
+<p>➱ <code>绝对定位    position: absolute;</code><br>元素相对于最近的定位祖先元素进行定位（而不是相对于视口定位，如 fixed），如果绝对定位的元素没有祖先，它将使用文档主体（body），并随页面滚动一起移动。<br><img src="/images/resources/positionexmple.png" alt="positionexmple"></p>
+<h4 id="至此，CSS的入门教程结束"><a href="#至此，CSS的入门教程结束" class="headerlink" title="至此，CSS的入门教程结束"></a>至此，CSS的入门教程结束</h4>
+    </div>
+    
+    
+    
+    
+    <div id="comment">
+        <div id="giscus-container" class="giscus"></div>
+    </div>
+    
+    
+    
+    <div id="comment">
+        <div id="twikoo-container"></div>
+    </div>
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2024 Ksayus の 猫窝
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;Ksayus
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+<script
+    src="https://giscus.app/client.js"
+    data-repo="ksayus/ksayus_personal_website_comments"
+    data-repo-id="R_kgDONGFRoA"
+    data-category="General"
+    data-category-id="DIC_kwDONGFRoM4CjtOX"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="preferred_color_scheme"
+    data-lang="zh-CN"
+    crossorigin
+    async
+></script>
+
+
+
+
+<script>
+    twikoo.init({
+        el: "#twikoo-container",
+        envId: "",
+        region: "",
+        path: location.pathname,
+        lang: "",
+    })
+</script>
+
+
+    
+</body>
+</html>
