@@ -3,7 +3,7 @@
 <html lang="cn">
 <head>
     <meta charset="utf-8" />
-    <title>PCSMT | Ksayus の 猫窝</title>
+    <title>C++经典例题-简单计算器 | Ksayus の 猫窝</title>
     <meta name="author" content="Ksayus" />
     <meta name="description" content="喵~" />
     <meta name="keywords" content="" />
@@ -158,56 +158,217 @@
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <div class="article">
     <div>
-        <h1>PCSMT</h1>
+        <h1>C++经典例题-简单计算器</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2024/10/19
+            2024/10/26
         </span>
         
-        <span class="category">
-            <a href="/categories/%E7%A8%8B%E5%BA%8F/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                程序
-            </a>
-        </span>
-        
-        
-        <span class="tags">
-            <span class="icon">
-                <i class="fa-solid fa-tags fa-fw"></i>
-            </span>
-            
-            
-            <span class="tag">
-                
-                <a href="/tags/Minecraft/" style="color: #00bcd4">
-                    Minecraft
-                </a>
-            </span>
-            
-        </span>
         
     </div>
     
     <div class="content" v-pre>
-        <p><img src="/images/resources/PCSMT.png" alt="PCSMT"></p>
-<h5 id="欢迎来到PCSMT的发布页面，这是一个关于MC的服务器管理终端的开源项目，未来将会持续更新此程序"><a href="#欢迎来到PCSMT的发布页面，这是一个关于MC的服务器管理终端的开源项目，未来将会持续更新此程序" class="headerlink" title="欢迎来到PCSMT的发布页面，这是一个关于MC的服务器管理终端的开源项目，未来将会持续更新此程序"></a>欢迎来到PCSMT的发布页面，这是一个关于MC的服务器管理终端的开源项目，未来将会持续更新此程序</h5><span id="more"></span>
-<h2 id="用处"><a href="#用处" class="headerlink" title="用处"></a>用处</h2><h4 id="更好的管理您的MC服务器"><a href="#更好的管理您的MC服务器" class="headerlink" title="更好的管理您的MC服务器"></a>更好的管理您的MC服务器</h4><h2 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h2><ul>
-<li>start</li>
-<li>addserver</li>
-<li>startserver</li>
-<li>serverlist</li>
-</ul>
-<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><h5 id="Github-下载"><a href="#Github-下载" class="headerlink" title="Github 下载"></a>Github 下载</h5><p><a target="_blank" rel="noopener" href="https://github.com/ksayus/PCSMT/releases">PCSMT</a></p>
-<h5 id="从-Git-克隆"><a href="#从-Git-克隆" class="headerlink" title="从 Git 克隆"></a>从 Git 克隆</h5><pre><code class="bash">git clone https://github.com/ksayus/PCSMT
+        <h1 id="简单计算器"><a href="#简单计算器" class="headerlink" title="简单计算器"></a>简单计算器</h1><span id="more"></span>
+<h3 id="实现目标："><a href="#实现目标：" class="headerlink" title="实现目标："></a>实现目标：</h3><h5 id="实现计算器的加减乘除，输出打印结果"><a href="#实现计算器的加减乘除，输出打印结果" class="headerlink" title="实现计算器的加减乘除，输出打印结果"></a>实现计算器的加减乘除，输出打印结果</h5><h4 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h4><p>通过使用 <code>string</code> 字符串实现获取用户加减乘除的需求，两个 <code>int</code> 变量实现获取用户输入的要计算的数字<br>然后通过 <code>if</code> 语句判断执行的代码</p>
+<h1 id="理论存在，实践开始！"><a href="#理论存在，实践开始！" class="headerlink" title="理论存在，实践开始！"></a>理论存在，实践开始！</h1><pre><code class="cpp">#include &lt;iostream&gt;
+#include &lt;string&gt;	//因为需要用到string字符串，所以需要引用头文件 &lt;string&gt;
+using namespace std;
+int main()
+&#123;
+    system(&quot;pause&quot;);
+    return 0;
+&#125;
 </code></pre>
-<h2 id="开源项目地址"><a href="#开源项目地址" class="headerlink" title="开源项目地址"></a>开源项目地址</h2><p><a target="_blank" rel="noopener" href="https://github.com/ksayus/PCSMT">PCSMT</a>	-Github</p>
+<p>框架已经写好了<br>现在就开始定义变量</p>
+<pre><code class="cpp">    int input1 = 0;	//第一个数
+    int input2 = 0; //第二个数
+    string Operator;	//运算符
+   int output = 0;	//输出使用的变量
+</code></pre>
+<p>然后实现用户的输入</p>
+<pre><code class="cpp">cout &lt;&lt; &quot;输入第一个数：&quot; &lt;&lt; endl;
+cin &gt;&gt; input1;
+cout &lt;&lt; &quot;输入运算符：&quot; &lt;&lt; endl;
+cin &gt;&gt; Operator;
+cout &lt;&lt; &quot;输入第二个数：&quot; &lt;&lt; endl;
+cin &gt;&gt; input2;
+</code></pre>
+<p>现在获得了用户的输入，界限来就是对用户输入的变量惊进行判断和计算<br>使用 <code>if</code> 判断</p>
+<pre><code class="cpp">if (Operator == &quot;+&quot;)
+&#123;
+
+&#125;
+else &#123;
+    if (Operator == &quot;-&quot;)
+    &#123;
+
+    &#125;
+    else &#123;
+        if (Operator == &quot;*&quot;)
+        &#123;
+
+        &#125;
+        else &#123;
+            if (Operator == &quot;/&quot;)
+            &#123;
+
+            &#125;
+            else &#123;
+                cout &lt;&lt; &quot;输入的运算符有误！&quot; &lt;&lt; endl;
+            &#125;
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<p>然后加入运算模块</p>
+<pre><code class="cpp">if (Operator == &quot;+&quot;)
+&#123;
+    output = input1 + input2;
+&#125;
+else &#123;
+    if (Operator == &quot;-&quot;)
+    &#123;
+        output = input1 - input2;
+    &#125;
+    else &#123;
+        if (Operator == &quot;*&quot;)
+        &#123;
+            output = input1 * input2;
+        &#125;
+        else &#123;
+            if (Operator == &quot;/&quot;)
+            &#123;
+                output = input1 / input2;
+            &#125;
+            else &#123;
+                cout &lt;&lt; &quot;输入的运算符有误！&quot; &lt;&lt; endl;
+            &#125;
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<p>最好输出计算结果</p>
+<pre><code class="cpp">    cout &lt;&lt; &quot;计算结果：&quot; &lt;&lt; output &lt;&lt; endl;
+</code></pre>
+<p>程序界面<br><img src="/images/resources/jisuanqi.png" alt="jisuanqi"></p>
+<h3 id="至此，程序结束"><a href="#至此，程序结束" class="headerlink" title="至此，程序结束"></a>至此，程序结束</h3><p>程序中，也可以加入<code>while</code> 循环实现程序的循环运行，直到用户输入”stop”结束程序,每次循环清一次屏<br>修改后：</p>
+<pre><code class="cpp">while (1)
+&#123;
+    //初始化变量
+    input1 = 0;
+    input2 = 0;
+    Operator = &#123;&#125;;
+
+    cout &lt;&lt; &quot;输入第一个数：&quot; &lt;&lt; endl;
+    cin &gt;&gt; input1;
+    cout &lt;&lt; &quot;输入运算符：&quot; &lt;&lt; endl;
+    cin &gt;&gt; Operator;
+    cout &lt;&lt; &quot;输入第二个数：&quot; &lt;&lt; endl;
+    cin &gt;&gt; input2;
+
+    if (Operator == &quot;+&quot;)
+    &#123;
+        output = input1 + input2;
+    &#125;
+    else &#123;
+        if (Operator == &quot;-&quot;)
+        &#123;
+            output = input1 - input2;
+        &#125;
+        else &#123;
+            if (Operator == &quot;*&quot;)
+            &#123;
+                output = input1 * input2;
+            &#125;
+            else &#123;
+                if (Operator == &quot;/&quot;)
+                &#123;
+                    output = input1 / input2;
+                &#125;
+                else &#123;
+                    cout &lt;&lt; &quot;输入的运算符有误！&quot; &lt;&lt; endl;
+                &#125;
+            &#125;
+        &#125;
+    &#125;
+    cout &lt;&lt; &quot;计算结果：&quot; &lt;&lt; output &lt;&lt; endl;
+    system(&quot;pause&quot;);
+
+    if (Operator == &quot;stop&quot;)
+    &#123;
+        system(&quot;pause&quot;);
+        return 0;
+    &#125;
+    system(&quot;cls&quot;);
+&#125;
+</code></pre>
+<p>完整代码如下:</p>
+<pre><code class="cpp">#include &lt;iostream&gt;
+#include &lt;string&gt;//因为使用了
+using namespace std;
+int main()
+&#123;
+    int input1 = 0;
+    int input2 = 0;
+    int output = 0;
+    string Operator;
+    while (1)
+    &#123;
+        input1 = 0;
+        input2 = 0;
+        Operator = &#123;&#125;;
+
+        cout &lt;&lt; &quot;输入第一个数：&quot; &lt;&lt; endl;
+        cin &gt;&gt; input1;
+        cout &lt;&lt; &quot;输入运算符：&quot; &lt;&lt; endl;
+        cin &gt;&gt; Operator;
+        cout &lt;&lt; &quot;输入第二个数：&quot; &lt;&lt; endl;
+        cin &gt;&gt; input2;
+
+        if (Operator == &quot;+&quot;)
+        &#123;
+            output = input1 + input2;
+        &#125;
+        else &#123;
+            if (Operator == &quot;-&quot;)
+            &#123;
+                output = input1 - input2;
+            &#125;
+            else &#123;
+                if (Operator == &quot;*&quot;)
+                &#123;
+                    output = input1 * input2;
+                &#125;
+                else &#123;
+                    if (Operator == &quot;/&quot;)
+                    &#123;
+                        output = input1 / input2;
+                    &#125;
+                    else &#123;
+                        cout &lt;&lt; &quot;输入的运算符有误！&quot; &lt;&lt; endl;
+                    &#125;
+                &#125;
+            &#125;
+        &#125;
+        cout &lt;&lt; &quot;计算结果：&quot; &lt;&lt; output &lt;&lt; endl;
+        system(&quot;pause&quot;);
+
+        if (Operator == &quot;stop&quot;)
+        &#123;
+            system(&quot;pause&quot;);
+            return 0;
+        &#125;
+        system(&quot;cls&quot;);
+    &#125;
+
+    system(&quot;pause&quot;);
+    return 0;
+&#125;
+</code></pre>
 
     </div>
     
