@@ -3,7 +3,7 @@
 <html lang="cn">
 <head>
     <meta charset="utf-8" />
-    <title>C++经典例题-水仙花数 | Ksayus の 猫窝</title>
+    <title>C++经典例题-冒泡排序 | Ksayus の 猫窝</title>
     <meta name="author" content="Ksayus" />
     <meta name="description" content="喵~" />
     <meta name="keywords" content="" />
@@ -158,7 +158,7 @@
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <div class="article">
     <div>
-        <h1>C++经典例题-水仙花数</h1>
+        <h1>C++经典例题-冒泡排序</h1>
     </div>
     <div class="info">
         <span class="date">
@@ -186,7 +186,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/C/" style="color: #ffa2c4">
+                <a href="/tags/C/" style="color: #00bcd4">
                     C++
                 </a>
             </span>
@@ -196,63 +196,94 @@
     </div>
     
     <div class="content" v-pre>
-        <h1 id="水仙花数"><a href="#水仙花数" class="headerlink" title="水仙花数"></a>水仙花数</h1><h3 id="什么是水仙花数？"><a href="#什么是水仙花数？" class="headerlink" title="什么是水仙花数？"></a>什么是水仙花数？</h3><p>水仙花数是指一个 3 位数，它的每个数位上的数字的 <strong>3</strong> 次幂之和等于它本身的一个数</p>
-<span id="more"></span>  
-<p>例：<br><code>1^3 + 5^3+ 3^3 = 153</code></p>
-<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>我们需要对每个三位数进行拆分计算，将符合水仙花数的数输出到控制台<br>对于所有三位数，我们可以知道，是 <strong>100~999</strong> 之间的数字<br>可以使用 <code>for</code> 循环或者 <code>while</code>循环解题</p>
-<h4 id="for-循环"><a href="#for-循环" class="headerlink" title="for 循环"></a>for 循环</h4><pre><code class="cpp">for (int i = 100; i &lt;= 999; i++)
+        <h1 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h1><p>冒泡排序，就是让数字像水里的泡泡一样，由大到小排序<br>那么在程序中我们要怎么实现呢？</p>
+<span id="more"></span>
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p><img src="/images/resources/maopaopaixu.gif" alt="maopaopaixu"></p>
+<p>既然要从大到小排序，当然需要使用 <code>for</code> 循环来实现对一个整型数组每一位进行读取和判断并重新排序了<br>那么这是一个数组</p>
+<pre><code class="cpp">int arr[10] = &#123; 4,2,8,7,6,3,1,9,5,0 &#125;;
+</code></pre>
+<p>接下来我们要获取这个数组的长度</p>
+<pre><code class="cpp">int arrlong = sizeof(arr) / sizeof(*arr);
+</code></pre>
+<p>通过使用 <code>sizeof()</code> 关键字进行获取数组 <code>arr</code> 占用的内存，并获取 <code>*arr</code> 即 <code>arr[0]</code> 的长度，让两个数相除得到数组长度  </p>
+<p>利用 <code>for</code> 循环表达数组的全部数：</p>
+<pre><code class="cpp">for (int i = 0; i &lt;= arrlong; i++)
 &#123;
 &#125;
 </code></pre>
-<h4 id="while-循环"><a href="#while-循环" class="headerlink" title="while 循环"></a>while 循环</h4><pre><code class="cpp">int j = 100;
-while (j != 1000)
+<p>然后在 <code>for</code> 循环内加入转换的实现代码</p>
+<pre><code class="cpp">int stream = 0;
+stream = arr[j];
+arr[j] = arr[j + 1];
+arr[j + 1] = stream;
+</code></pre>
+<p>或者使用C++关键字 <code>swap()</code> 进行交换</p>
+<pre><code class="cpp">swap(arr[j], arr[j + 1]);
+</code></pre>
+<p>然后，将转换代码封装到函数 <code>sorting()</code> 中</p>
+<pre><code class="cpp">void sorting(int array[],int arraylong)
 &#123;
-    j++;
-&#125;
-</code></pre>
-<h3 id="拆解数字"><a href="#拆解数字" class="headerlink" title="拆解数字"></a>拆解数字</h3><p>三位数的表示搞定了，那数字拆分呢？<br>很简单，只需要使用运算符就能解决就行</p>
-<p>获取百位</p>
-<pre><code class="cpp">int num_100 = i / 100;
-</code></pre>
-<p>获取十位</p>
-<pre><code class="cpp">int num_10 = i % 100 / 10;
-</code></pre>
-<p>获取个位</p>
-<pre><code class="cpp">int num_1 = i % 100 % 10;
-</code></pre>
-<p>这样就实现了对每个三位数各个位置的数的获取</p>
-<p>接下来就是求这三个数的 <strong>3</strong> 次幂之和了</p>
-<pre><code class="cpp">int sum = (num_100 * num_100 * num_100) + (num_10 * num_10 * num_10) + (num_1 * num_1 * num_1);;
-</code></pre>
-<p>求完和，就到了对比环节，使用 <code>if</code> 判断句进行判断，若相同就输出，不相同不进行任何操作</p>
-<pre><code class="cpp">if (sum == i)
-&#123;
-    cout &lt;&lt; i &lt;&lt; endl;
-&#125;
-</code></pre>
-<p>运行结果：<br><img src="/images/resources/shuixianhuashu.png" alt="shuixianhuashu"></p>
-<h2 id="至此，程序完成！"><a href="#至此，程序完成！" class="headerlink" title="至此，程序完成！"></a>至此，程序完成！</h2><p>完整代码:</p>
-<pre><code class="cpp">#include &lt;iostream&gt;
-using namespace std;
-int main()
-&#123;
-    for (int i = 100; i &lt;= 999; i++)
+    for (int i = 0; i &lt;= arraylong - 1; i++)
     &#123;
-        int num_100 = i / 100;
-        int num_10 = i % 100 / 10;
-        int num_1 = i % 100 % 10;
-
-        int sum = (num_100 * num_100 * num_100) + (num_10 * num_10 * num_10) + (num_1 * num_1 * num_1);;
-        if (sum == i)
+        for (int j = 0; j &lt;= arraylong - 1 - i; j++)
         &#123;
-            cout &lt;&lt; i &lt;&lt; endl;
+            if (array[j] &gt; array[j + 1])
+            &#123;
+                /*int stream = 0;
+                stream = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = stream;*/
+                swap(array[j], array[j + 1]);
+            &#125;
         &#125;
     &#125;
-    /*int j = 100;
-    while (j != 1000)
+&#125;
+</code></pre>
+<p>在 <code>main()</code> 函数中调用 <code>sorting()</code> 函数</p>
+<pre><code class="cpp">sorting(arr, arrlong);
+</code></pre>
+<p>最后，输出结果</p>
+<pre><code class="cpp">for (int k = 0; k &lt;= arrlong-1; k++)
+&#123;
+    cout &lt;&lt; arr[k] &lt;&lt; endl;
+&#125;
+</code></pre>
+<p><img src="/images/resources/maopaopaixujieguo.png" alt="maopaopaixujieguo"></p>
+<h2 id="至此，程序结束"><a href="#至此，程序结束" class="headerlink" title="至此，程序结束"></a>至此，程序结束</h2><p>完整代码:</p>
+<pre><code class="cpp">#include &lt;iostream&gt;
+using namespace std;
+
+void sorting(int array[],int arraylong)
+&#123;
+    for (int i = 0; i &lt;= arraylong - 1; i++)
     &#123;
-        j++;
-    &#125;*/
+        for (int j = 0; j &lt;= arraylong - 1 - i; j++)
+        &#123;
+            if (array[j] &gt; array[j + 1])
+            &#123;
+                /*int stream = 0;
+                stream = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = stream;*/
+                swap(array[j], array[j + 1]);
+            &#125;
+        &#125;
+    &#125;
+&#125;
+
+int main()
+&#123;
+    int arr[] = &#123; 4,2,8,7,6,3,1,9,5,0 &#125;;
+
+    int arrlong = sizeof(arr) / sizeof(*arr);
+
+    sorting(arr, arrlong);
+
+    for (int k = 0; k &lt;= arrlong-1; k++)
+    &#123;
+        cout &lt;&lt; arr[k] &lt;&lt; endl;
+    &#125;
+
     system(&quot;pause&quot;);
     return 0;
 &#125;
