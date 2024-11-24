@@ -1,0 +1,79 @@
+div div.top{
+    /*一个导航栏*/
+    width: 100%;
+    /* height: 60px; */
+    background-color: #c5e2ee;
+    /*要有阴影*/
+    box-shadow: 0 0 5px #ccc;
+    overflow: hidden;
+    
+}
+div div.top nav a{
+    color: black;
+    font-size: larger;
+    font-family: blackyard;font-weight: bolder;
+}
+div div.top nav a:hover{
+    color: #00bfff;
+}
+div div.top nav img{
+    width: 168px;
+}
+a.top_float_left{
+    float: left;
+}
+a.top_float_right{
+    float: right;
+    margin-top: 10px;
+    margin-right: 1%;
+    line-height: 50px;
+}
+p.top_float_left{
+    font-size: 20px;
+    float: left;
+    margin-left: 30px;
+}
+p.top_float_right{
+    font-size: 20px;
+    float: right;
+    margin-right: 8px;
+}
+p.top_float_right:hover{
+    color: #00bfff;
+}
+a.top_float_right img{
+    border-radius: 50%;
+}
+.content{
+    margin-left: 20%;
+    margin-top: 15%;
+    float: left;
+}
+p.introduction{
+    color: #0bb9f3;
+    font: 31px bolder ;
+    
+}
+a.options{
+    top: 50%;
+}
+* {
+    scrollbar-color: #8ab5ff #e6efff;
+    scrollbar-width: thin;
+}
+div.avatar{
+    display: none;
+}
+div.avatar:hover{
+    overflow: visible;
+    z-index: 999;
+    cursor: pointer;
+}
+.avatar_menu{
+    background: #00bfff;
+    text-align: center;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    overflow: hidden;
+}

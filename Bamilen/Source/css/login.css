@@ -1,0 +1,14 @@
+div.login{
+    background-color: #00a2ff;
+    width: 400px;
+    height: 300px;
+    margin-top: 15%;
+    margin-left: 40%;
+    float: left;
+    box-shadow: 0 0 8px #9e9797;
+}
+form.login_form{
+    margin-top: 20%;
+    margin-left: 15%;
+    float: left;
+}
