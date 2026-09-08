@@ -91,7 +91,7 @@ export const siteConfig: SiteConfig = {
 	favicon: [
 		{
 			// 图标文件路径
-			src: "/favicon/ksayus-32.png",
+			src: "/favicon/ksayus-32.jpg",
 			// 可选，指定主题 'light' | 'dark'
 			// theme: "light",
 			// 可选，图标大小
@@ -114,7 +114,7 @@ export const siteConfig: SiteConfig = {
 			type: "image",
 			value: "assets/images/logo/firefly-light.png",
 			valueDark: "assets/images/logo/firefly-dark.png",
-			alt: "/assets/favicon/ksayus-32.png",
+			alt: "Ksayus",
 		},
 		// 导航栏标题
 		title: "Ksayus の 猫窝",
