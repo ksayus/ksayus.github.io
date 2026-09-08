@@ -48,7 +48,7 @@ export const siteConfig: SiteConfig = {
 	subtitle: "这里是小猫的代码博客喵",
 
 	// 站点 URL
-	site_url: "https://ksayus.github.io",
+	site_url: "https://ksayus.top",
 
 	// 站点描述
 	description:
