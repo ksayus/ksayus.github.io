@@ -114,10 +114,10 @@ export const siteConfig: SiteConfig = {
 			type: "image",
 			value: "assets/images/logo/firefly-light.png",
 			valueDark: "assets/images/logo/firefly-dark.png",
-			alt: "🍀",
+			alt: "/assets/favicon/ksayus-32.png",
 		},
 		// 导航栏标题
-		title: "Firefly",
+		title: "Ksayus の 猫窝",
 		// 全宽导航栏，导航栏是否占满屏幕宽度
 		widthFull: false,
 		// 导航菜单对齐方式，left：左对齐，center：居中
