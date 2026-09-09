@@ -3,7 +3,7 @@ title: "LivelyAnimationEngine"
 published: 2025-06-01
 order: 3
 description: "一个基于 WPF 的动画引擎，为 PCSM Next 项目提供流畅的 UI 动画支持。"
-image: ""
+image: "../posts/images/LAE.jpg"
 tags: ["WPF", "C#", "Animation"]
 link:
   - label: "GitHub"

@@ -3,7 +3,7 @@ title: "PCSMT-2"
 published: 2025-01-10
 order: 1
 description: "你的下一个 Minecraft 服务器管理器，基于 Python 构建的现代化服务器管理方案。"
-image: ""
+image: "../posts/images/PCSMT2.png"
 tags: ["Minecraft", "Python", "Server"]
 link:
   - label: "GitHub"
