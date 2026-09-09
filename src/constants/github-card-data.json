@@ -5,10 +5,22 @@
 		"avatarUrl": "https://avatars.githubusercontent.com/u/43440669?v=4",
 		"license": "MIT"
 	},
-	"saicaca/fuwari": {
-		"description": "✨A static blog template built with Astro. ",
-		"language": "Astro",
-		"avatarUrl": "https://avatars.githubusercontent.com/u/25200299?v=4",
+	"ksayus/livelyanimationengine": {
+		"description": "A WPF animation engine for PCSM Next project.",
+		"language": "C#",
+		"avatarUrl": "https://avatars.githubusercontent.com/u/108785703?v=4",
 		"license": "MIT"
+	},
+	"ksayus/omniark": {
+		"description": "A Minecraft server manage tool",
+		"language": "C#",
+		"avatarUrl": "https://avatars.githubusercontent.com/u/108785703?v=4",
+		"license": "GPL-3.0"
+	},
+	"ksayus/pcsmt-2": {
+		"description": "你的下一个Minecraft服务器管理器",
+		"language": "Python",
+		"avatarUrl": "https://avatars.githubusercontent.com/u/108785703?v=4",
+		"license": null
 	}
 }
