@@ -9,7 +9,7 @@ link:
   - label: "GitHub"
     icon: "mdi:github"
     value: "https://github.com/ksayus/PCSMT-2"
-status: "developing"
+status: "archived"
 ---
 
 ## PCSMT-2
