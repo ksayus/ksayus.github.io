@@ -12,13 +12,13 @@ export const musicPlayerConfig: MusicPlayerConfig = {
 	mode: "local",
 
 	// 默认音量 (0-1)
-	volume: 0.7,
+	volume: 0.5,
 
 	// 播放模式：'list'=列表循环, 'one'=单曲循环, 'random'=随机播放
 	playMode: "list",
 
 	// 是否显启用歌词
-	showLyrics: false,
+	showLyrics: true,
 
 	// Meting API 配置
 	meting: {
