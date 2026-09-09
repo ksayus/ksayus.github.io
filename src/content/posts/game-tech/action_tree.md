@@ -4,7 +4,7 @@ published: 2026-09-09
 description: 决策树是一种用于游戏开发的决策模型，它可以帮助游戏开发者根据玩家的行为和游戏状态来做出决策。
 tags: [游戏开发, 决策树, AI]
 category: 游戏技术
-image: ./images/action_tree.avif
+image: ../images/action-tree.avif
 slug: action-tree
 ---
 
