@@ -61,7 +61,7 @@ python -m venv venv
 
 执行后，项目目录下会生成一个 `venv` 文件夹，结构如下：
 
-![创建虚拟环境命令](./images/python/venv/python-create-venv-cmd.png)
+![创建虚拟环境命令](../images/python/venv/python-create-venv-cmd.png)
 
 ### 虚拟环境目录结构
 
@@ -118,11 +118,11 @@ source venv/bin/activate
 
 激活成功后，终端提示符前面会出现 `(venv)` 标识，表示当前处于虚拟环境中：
 
-![激活虚拟环境](./images/python/venv/python-venv-active.png)
+![激活虚拟环境](../images/python/venv/python-venv-active.png)
 
 此时运行 `where python`（Windows）或 `which python`（Linux/macOS），会指向虚拟环境中的 Python 解释器，而非系统全局的 Python：
 
-![激活效果](./images/python/venv/python-venv-active-effect.png)
+![激活效果](../images/python/venv/python-venv-active-effect.png)
 
 > [!IMPORTANT]
 > 每次打开新终端都需要重新激活虚拟环境，因为激活只在当前终端会话中生效。
@@ -178,7 +178,7 @@ pip install --upgrade requests
 pip freeze > requirements.txt
 ```
 
-![生成 requirements.txt](./images/python/venv/python-requirements.png)
+![生成 requirements.txt](../images/python/venv/python-requirements.png)
 
 `pip freeze` 会列出当前环境中所有已安装的包及其精确版本号，`>` 将输出重定向到 `requirements.txt` 文件中。
 
@@ -201,7 +201,7 @@ numpy>=1.26.0
 requests>=2.28.0
 ```
 
-![编辑 requirements.txt](./images/python/venv/python-requirements-edit-sample.png)
+![编辑 requirements.txt](../images/python/venv/python-requirements-edit-sample.png)
 
 > [!TIP]
 > 版本锁定（`==`）适合生产环境，确保所有环境完全一致；版本范围（`>=`）适合开发阶段，允许小版本更新。
@@ -214,7 +214,7 @@ requests>=2.28.0
 pip install -r requirements.txt
 ```
 
-![从 requirements.txt 安装](./images/python/venv/python-use-requirements.png)
+![从 requirements.txt 安装](../images/python/venv/python-use-requirements.png)
 
 `pip` 会依次读取并安装 `requirements.txt` 中列出的所有包。
 
@@ -230,7 +230,7 @@ deactivate
 
 退出后，终端提示符前的 `(venv)` 标识消失，`python` 和 `pip` 会恢复为系统全局的版本。
 
-![退出虚拟环境](./images/python/venv/python-venv-finish.png)
+![退出虚拟环境](../images/python/venv/python-venv-finish.png)
 
 ---
 
