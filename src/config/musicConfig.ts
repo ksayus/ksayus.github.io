@@ -52,7 +52,7 @@ export const musicPlayerConfig: MusicPlayerConfig = {
 				artist: "柏桦 / 灰觉GO",
 				url: "/assets/music/柏桦,灰觉GO - 给某某.mp3",
 				cover: "/assets/music/cover/109951173763774131.jpg",
-				lrc: "",
+				lrc: "/assets/music/lrc/给某某.lrc",
 			},
 		],
 	},
