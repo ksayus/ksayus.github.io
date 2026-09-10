@@ -297,9 +297,9 @@ if __name__ == "__main__":
 
 下图是随机初始状态（50% 存活率）以及运行若干代后趋于稳定的状态：
 
-![初始状态](../images/conway-begin.png)
+![初始状态](../images/game/conway/conway-begin.png)
 
-![稳定状态](../images/conway-finish.png)
+![稳定状态](../images/game/conway/conway-finish.png)
 
 ## 著名的生命游戏模式
 

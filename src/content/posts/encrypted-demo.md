@@ -26,7 +26,7 @@ seriesOrder: 6
 
 ## 图片
 
-![Firefly](./images/1.avif)
+![Firefly](./images/avatar.avif)
 
 ## GitHub 仓库卡片
 

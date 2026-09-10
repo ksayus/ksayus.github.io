@@ -384,9 +384,9 @@ print("Hello")
 ```
 
 [grid]
-![示例图片一](./images/firefly1.avif)
-![示例图片二](./images/firefly2.avif)
-![示例图片二](./images/firefly3.avif)
+![示例图片一](./images/course/code-block/docusaurus.avif)
+![示例图片二](./images/course/code-block/github.avif)
+![示例图片三](./images/course/code-block/obsidian.avif)
 [/grid]
 
 > [!NOTE]

@@ -47,7 +47,7 @@ export const siteConfig: SiteConfig = {
 
 这是 GitHub 官方支持的 5 种基本类型。
 
-![GitHub](./images/github.avif)
+![GitHub](./images/course/code-block/github.avif)
 
 **基本语法**
 
@@ -168,7 +168,7 @@ export const siteConfig: SiteConfig = {
 ```
 </details>
 
-![Obsidian](./images/obsidian.avif)
+![Obsidian](./images/course/code-block/obsidian.avif)
 
 ---
 
@@ -200,7 +200,7 @@ export const siteConfig: SiteConfig = {
 ```
 </details>
 
-![VitePress](./images/vitepress.avif)
+![VitePress](./images/course/code-block/vitepress.avif)
 
 ---
 
@@ -241,7 +241,7 @@ export const siteConfig: SiteConfig = {
 
 </details>
 
-![Docusaurus](./images/docusaurus.avif)
+![Docusaurus](./images/course/code-block/docusaurus.avif)
 
 ---
 
@@ -264,18 +264,18 @@ export const siteConfig: SiteConfig = {
 **图注恒定底端对齐：** 不论上面的图片长宽如何变化，在同一行的所有图像解释文字（图注）都会对标到一条完美的水平基线上了。
 
 [grid]
-![示例图片一](./images/firefly1.avif)
-![示例图片二](./images/firefly2.avif)
-![示例图片二](./images/firefly3.avif)
+![示例图片一](./images/course/code-block/docusaurus.avif)
+![示例图片二](./images/course/code-block/github.avif)
+![示例图片三](./images/course/code-block/obsidian.avif)
 [/grid]
 
 **基本语法**
 
 ```markdown
 [grid]
-![示例图片一](./images/firefly1.avif)
-![示例图片二](./images/firefly2.avif)
-![示例图片二](./images/firefly3.avif)
+![示例图片一](./images/course/code-block/docusaurus.avif)
+![示例图片二](./images/course/code-block/github.avif)
+![示例图片三](./images/course/code-block/obsidian.avif)
 [/grid]
 ```
 

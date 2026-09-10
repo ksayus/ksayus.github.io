@@ -116,15 +116,15 @@ GCC 安装在 MSYS2 的目录下，目前只能在 UCRT64 终端中使用。为�
 
 在 Windows 搜索框中输入「环境变量」，点击搜索结果中的「编辑系统环境变量」：
 
-![搜索环境变量](./images/search-system-environment-var.png)
+![搜索环境变量](./images/system/environment-var/search-system-environment-var.png)
 
 在弹出的「系统属性」窗口中，点击右下角的「环境变量(N)...」按钮：
 
-![打开系统属性](./images/open-system-environment-var.png)
+![打开系统属性](./images/system/environment-var/open-system-environment-var.png)
 
 点击「环境变量(N)...」后会弹出「环境变量」窗口，上半部分是**用户变量**（只对当前用户生效），下半部分是**系统变量**（对所有用户生效）：
 
-![环境变量窗口](./images/click-environment-var.png)
+![环境变量窗口](./images/system/environment-var/click-environment-var.png)
 
 **方法二：通过设置**
 
@@ -137,7 +137,7 @@ GCC 安装在 MSYS2 的目录下，目前只能在 UCRT64 终端中使用。为�
 
 在「系统变量」区域找到 `Path` 变量，选中后点击「编辑」：
 
-![选择 Path 变量](./images/select-Path.png)
+![选择 Path 变量](./images/system/environment-var/select-Path.png)
 
 ### 添加 MSYS2 工具链路径
 
@@ -151,11 +151,11 @@ C:\msys64\usr\bin
 - `C:\msys64\ucrt64\bin`：GCC 编译器和相关工具所在目录
 - `C:\msys64\usr\bin`：MSYS2 核心工具（如 bash、make、pacman 等）所在目录
 
-![点击新建](./images/click-new.png)
+![点击新建](./images/system/environment-var/click-new.png)
 
 添加完成后，使用「上移」按钮将这两个路径调整到合适的位置，确保它们**不会被其他同名命令覆盖**。
 
-![编辑环境变量](./images/click-edit.png)
+![编辑环境变量](./images/system/environment-var/click-edit.png)
 
 > [!WARNING]
 > 如果你还安装了其他包含 `gcc.exe` 的软件（如 Dev-C++、Code::Blocks、Qt），请确保 MSYS2 的路径排在它们**前面**，否则调用到的可能是旧版本的编译器。
