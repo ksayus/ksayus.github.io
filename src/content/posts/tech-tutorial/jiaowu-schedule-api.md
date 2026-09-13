@@ -24,7 +24,7 @@ slug: jiaowu-schedule-api
 本系统采用前后端分离架构，课表数据通过 AJAX POST 请求获取 JSON 格式响应。
 
 | 项目 | 说明 |
-|---|---|
+|------|------|
 | Base URL | `https://jwxt.gzus.edu.cn/jwglxt` |
 | 课表查询端点 | `/kbcx/xskbcx_cxXsgrkb.html?gnmkdm=N2151` |
 | 请求方法 | `POST` |
@@ -73,7 +73,7 @@ slug: jiaowu-schedule-api
 ### 2.2 登录页面关键 HTML 字段
 
 | 字段名 | 说明 | 示例值 |
-|---|---|---|
+|--------|------|--------|
 | csrftoken | CSRF 令牌（逗号分隔的 UUID 对） | `xxxx-xxxx-xxxx,xxxxxxxxxxxxxxxx` |
 | mmsfjm | 密码是否加密（1=加密） | `1` |
 | yzcskz | 验证码触发次数 | `3` |
@@ -134,7 +134,7 @@ xnm=2025&xqm=12&kzlx=ck&xsdm=
 ### 3.2 请求参数说明
 
 | 参数 | 必填 | 说明 | 示例 |
-|---|---|---|---|
+|------|------|------|------|
 | gnmkdm | ✅ 必填 | 功能模块代码（URL Query 参数） | `N2151` |
 | xnm | ✅ 必填 | 学年码（学年起始年份） | `2025`（2025-2026学年） |
 | xqm | ✅ 必填 | 学期码 | `3`=第一学期 / `12`=第二学期 / `16`=第三学期（短学期） |
@@ -179,7 +179,7 @@ xnm=2025&xqm=12&kzlx=ck&xsdm=
 ### 3.4 响应字段说明
 
 | 字段 | 类型 | 说明 |
-|---|---|---|
+|------|------|------|
 | kcmc | String | 课程名称 |
 | kcxzmc | String | 课程性质（必修/选修/公共选修等） |
 | xf | String | 学分 |
@@ -206,7 +206,6 @@ import requests
 import base64
 import re
 import time
-import json
 import urllib3
 from cryptography.hazmat.primitives.asymmetric import rsa, padding
 from urllib.parse import quote
@@ -314,7 +313,7 @@ for course in result.get("kbList", []):
 ### 5.1 学期参数对照表
 
 | xnm（学年） | xqm（学期码） | 对应学期 |
-|---|---|---|
+|------------|--------------|----------|
 | 2025 | 3 | 2025-2026学年 第一学期（秋季） |
 | 2025 | 12 | 2025-2026学年 第二学期（春季） |
 | 2025 | 16 | 2025-2026学年 第三学期（短学期） |
@@ -323,7 +322,7 @@ for course in result.get("kbList", []):
 ### 5.2 常见错误排查
 
 | 错误现象 | 可能原因 | 解决方案 |
-|---|---|---|
+|----------|----------|----------|
 | API 返回空 / HTML | 未登录 / Session 失效 | 重新执行登录流程获取新 Cookie |
 | API 返回 JSON 但 kbList 为空 | 学年/学期参数错误 | 调整 xnm 和 xqm 参数值 |
 | RSA 加密后登录失败 | 加密实现有误 | 确认使用 PKCS#1 v1.5 填充，确认公钥正确获取 |
@@ -343,7 +342,7 @@ for course in result.get("kbList", []):
 ## 6. 端点速查表
 
 | 端点 | 方法 | 用途 | 关键参数 |
-|---|---|---|---|
+|------|------|------|----------|
 | `/jwglxt/xtgl/login_slogin.html` | GET | 获取登录页面 | 返回 csrftoken + Cookie |
 | `/jwglxt/xtgl/login_getPublicKey.html` | GET | 获取 RSA 公钥 | 返回 `{modulus, exponent}` |
 | `/jwglxt/xtgl/login_slogin.html?time=` | POST | 提交登录 | csrftoken, yhm, mm（加密）, language |
