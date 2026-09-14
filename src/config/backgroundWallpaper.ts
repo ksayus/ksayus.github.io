@@ -75,7 +75,10 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 			// 主页横幅副标题
 			subtitle: [
 				"This is Ksayus`s blog, is will be write some tech article.",
-				"年年有今日,岁岁有今朝"
+				"年年有今日,岁岁有今朝",
+				"一以贯之的努力,不可懈怠的人生",
+				"Some birds aren't meant to be caged. Their feathers are just too bright.",
+				"The world's full of lonely people afraid to make the first move."
 			],
 			// 主页横幅副标题字体大小
 			subtitleSize: "1.5rem",
