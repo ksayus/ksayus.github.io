@@ -1,6 +1,6 @@
 ---
 title: Android 数据转 JSON 完全指南：JSONObject、Gson、kotlinx.serialization 与 Moshi
-published: 2026-09-13
+published: 2026-09-15
 description: 手把手教你用代码将 int、String、List、Map、自定义对象等各类数据转换为 JSON 字符串，涵盖 org.json、Gson、kotlinx.serialization、Moshi 四种主流方案，附完整对比与选型建议。
 tags: [Android, JSON, Gson, kotlinx.serialization, Moshi, 序列化, 数据转换]
 category: Android
