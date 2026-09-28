@@ -31,14 +31,14 @@ slug: manycourse-learning-guide
 
 | 顺序 | 文章 | 内容 | 适合谁 | 预计耗时 |
 |------|------|------|--------|----------|
-| 1 | [Kotlin 语法速成](./manycourse-kotlin-crash-course) | 用项目代码讲 Kotlin 语法 | 完全没写过 Kotlin 的人 | 2-3 小时 |
-| 2 | [项目架构详解](./manycourse-project-architecture) | 四层设计 + 数据流 | 已过完语言、想看全貌的人 | 1-2 小时 |
-| 3 | [核心代码导读](./manycourse-code-walkthrough) | 逐文件逐行精读 | 准备深入源码的人 | 3-4 小时 |
-| 4 | [动手练习](./manycourse-hands-on-exercises) | 从改数据到加学校 | 想动手实践的人 | 4-8 小时 |
+| 1 | [Kotlin 语法速成](/posts/manycourse-kotlin-crash-course/) | 用项目代码讲 Kotlin 语法 | 完全没写过 Kotlin 的人 | 2-3 小时 |
+| 2 | [项目架构详解](/posts/manycourse-project-architecture/) | 四层设计 + 数据流 | 已过完语言、想看全貌的人 | 1-2 小时 |
+| 3 | [核心代码导读](/posts/manycourse-code-walkthrough/) | 逐文件逐行精读 | 准备深入源码的人 | 3-4 小时 |
+| 4 | [动手练习](/posts/manycourse-hands-on-exercises/) | 从改数据到加学校 | 想动手实践的人 | 4-8 小时 |
 
 每遍之间隔一两天，记忆更牢。卡住了就回到项目 README——README 是写给"想加学校的开发者"的，细节非常详尽。
 
-> 如果只想**尽快把项目跑起来**，跳过前三篇，直接看 [动手练习](./manycourse-hands-on-exercises) 的第一节「把项目跑起来」。
+> 如果只想**尽快把项目跑起来**，跳过前三篇，直接看 [动手练习](/posts/manycourse-hands-on-exercises/) 的第一节「把项目跑起来」。
 
 ---
 
@@ -113,9 +113,9 @@ slug: manycourse-learning-guide
 
 本系列共四篇文章，建议按顺序阅读：
 
-1. **[Kotlin 语法速成](./manycourse-kotlin-crash-course)** —— 用 ManyCourse 项目真实代码讲 Kotlin 语法，每个语法点都指回项目源码。零基础必读。
-2. **[项目架构详解](./manycourse-project-architecture)** —— 四层设计（ui / data / gr_api / api）、一次登录的完整数据流。想看懂全貌必读。
-3. **[核心代码导读](./manycourse-code-walkthrough)** —— 逐文件逐行精读最关键的 5 个源码文件。准备深入源码必读。
-4. **[动手练习](./manycourse-hands-on-exercises)** —— 从改一行数据到加一所学校的 7 道实战练习。想动手实践必读。
+1. **[Kotlin 语法速成](/posts/manycourse-kotlin-crash-course/)** —— 用 ManyCourse 项目真实代码讲 Kotlin 语法，每个语法点都指回项目源码。零基础必读。
+2. **[项目架构详解](/posts/manycourse-project-architecture/)** —— 四层设计（ui / data / gr_api / api）、一次登录的完整数据流。想看懂全貌必读。
+3. **[核心代码导读](/posts/manycourse-code-walkthrough/)** —— 逐文件逐行精读最关键的 5 个源码文件。准备深入源码必读。
+4. **[动手练习](/posts/manycourse-hands-on-exercises/)** —— 从改一行数据到加一所学校的 7 道实战练习。想动手实践必读。
 
 > **快速跳转**：如果你是零基础，从第 1 篇开始；如果你已有 Kotlin 经验，直接跳到第 2 篇；如果只想尽快跑起来，直接看第 4 篇的第一节。

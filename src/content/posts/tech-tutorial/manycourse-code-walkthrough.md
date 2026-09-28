@@ -12,7 +12,7 @@ slug: manycourse-code-walkthrough
 
 前三篇分别讲了 Kotlin 语法和项目架构，这一篇我们**打开源码，逐行精读**最关键的几个文件。
 
-建议配合 [Kotlin 语法速成](./manycourse-kotlin-crash-course) 和 [项目架构详解](./manycourse-project-architecture) 一起看，遇到不认识的语法往回翻。
+建议配合 [Kotlin 语法速成](/posts/manycourse-kotlin-crash-course/) 和 [项目架构详解](/posts/manycourse-project-architecture/) 一起看，遇到不认识的语法往回翻。
 
 ---
 

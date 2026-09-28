@@ -15,7 +15,7 @@ slug: manycourse-project-architecture
 读完这一篇，你打开代码就不会迷路。
 
 > [!NOTE]
-> 建议配合 [Kotlin 语法速成](./manycourse-kotlin-crash-course) 一起看。如果你已经熟悉 Kotlin 语法，可以直接从本文开始。
+> 建议配合 [Kotlin 语法速成](/posts/manycourse-kotlin-crash-course/) 一起看。如果你已经熟悉 Kotlin 语法，可以直接从本文开始。
 
 ---
 
@@ -212,4 +212,4 @@ ManyCourseMain (AppCompatActivity)
 
 ## 后续阅读
 
-架构看完了，下一步建议阅读 [核心代码导读](./manycourse-code-walkthrough)，逐文件逐行理解最关键的源码实现。
+架构看完了，下一步建议阅读 [核心代码导读](/posts/manycourse-code-walkthrough/)，逐文件逐行理解最关键的源码实现。
