@@ -1,6 +1,6 @@
 ---
 title: C 语言基础
-date: 2026-11-20
+published: 2026-11-20
 description: C 语言学习基础
 tags: [C, 基础, 模板]
 categories: [C]
